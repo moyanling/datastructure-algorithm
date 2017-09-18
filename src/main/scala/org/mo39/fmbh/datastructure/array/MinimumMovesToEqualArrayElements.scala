@@ -13,7 +13,7 @@ object MinimumMovesToEqualArrayElements {
   }
 
   def main(args: Array[String]): Unit = {
-    println(SOLUTION.minMoves(Array(1, 2147483647)))
+    println(SOLUTION.minMoves(Array(1, 1, 2147483647)))
   }
 
 }
