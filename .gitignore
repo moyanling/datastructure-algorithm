@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #### jetbrains ####
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -80,11 +81,17 @@ hs_err_pid*
 #### scala ####
 
 *.class
+=======
+#### scala ####
+>>>>>>> refs/remotes/origin/master
 *.log
 
 # sbt specific
 .cache
+<<<<<<< HEAD
 .history
+=======
+>>>>>>> refs/remotes/origin/master
 .lib/
 dist/*
 target/
@@ -97,10 +104,15 @@ project/plugins/project/
 .scala_dependencies
 .worksheet
 
+<<<<<<< HEAD
 # ENSIME specific
 .ensime_cache/
 .ensime
 .idea/
 project/project/
 src/main/scala/org/mo39/fmbh/commons/classes/
+=======
+.idea/
+project/project/
+>>>>>>> refs/remotes/origin/master
 src/test/
