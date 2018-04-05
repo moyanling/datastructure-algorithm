@@ -7,11 +7,9 @@ object MinimumMovesToEqualArrayElements {
   }
 
   case object SOLUTION extends MinimumMovesToEqualArrayElements {
-    override def minMoves(nums: Array[Int]): Int = ???
-  }
-
-  def main(args: Array[String]): Unit = {
-    println(SOLUTION.minMoves(Array(1, 2147483647)))
+    override def minMoves(nums: Array[Int]): Int = {
+      nums.map(_ - nums.min).sum
+    }
   }
 
 }
