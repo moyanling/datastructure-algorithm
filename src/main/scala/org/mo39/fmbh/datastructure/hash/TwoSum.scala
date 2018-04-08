@@ -12,9 +12,4 @@ object TwoSum {
     Array()
   }
 
-  def main(args: Array[String]): Unit = {
-    val nums = Array(2, 7, 11, 15)
-    println(twoSum(nums, 9).mkString(", "))
-  }
-
 }

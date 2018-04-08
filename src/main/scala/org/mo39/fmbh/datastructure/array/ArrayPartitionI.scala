@@ -7,7 +7,7 @@ object ArrayPartitionI {
   def arrayPairSum(nums: Array[Int]): Int = {
     var sum = 0
     Sorting.quickSort(nums)
-    for (i <- 0 until nums.length if i % 2 == 0) sum += nums(i)
+    for (i <- nums.indices if i % 2 == 0) sum += nums(i)
     sum
   }
 

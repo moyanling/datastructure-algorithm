@@ -3,8 +3,8 @@ package org.mo39.fmbh.commons.classes
 /**
   * Definition for a binary TreeNode
   */
-class TreeNode(var _value: Int) {
+case class TreeNode(var _value: Int) {
   var value: Int = _value
-  var left: TreeNode = null
-  var right: TreeNode = null
+  var left: TreeNode = _
+  var right: TreeNode = _
 }

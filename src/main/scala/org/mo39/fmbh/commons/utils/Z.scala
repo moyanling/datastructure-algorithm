@@ -88,8 +88,8 @@ object Z {
     * Helper function that swaps two elements at position i and j in an array.
     *
     * @param arr the array
-    * @param i position i
-    * @param j position j
+    * @param i   position i
+    * @param j   position j
     */
   def swap[T](arr: Array[T], i: Int, j: Int): Unit = {
     if (i == j) return
@@ -125,47 +125,8 @@ object Z {
     list.set(j, list.set(i, list.get(j)))
   }
 
-  //  /**
-  //    * Assert that one linked list is equal to a given array.
-  //    *
-  //    * @param expected
-  //    * @param head
-  //    */
-  //  // ------------ Verifies ------------------
-  //  def verify[T](expected: Array[T], head: Nothing): Unit = {
-  //    var i = 0
-  //    while ( {
-  //      i < expected.length
-  //    }) {
-  //      Assert.assertEquals(expected(i), head.`val`)
-  //      head = head.next
-  //
-  //      {
-  //        i += 1; i - 1
-  //      }
-  //    }
-  //    Assert.assertNull(head)
-  //  }
-  //
-  //  /**
-  //    * Assert that two binary trees are equal.
-  //    * <p>
-  //    * Two binary tree are considered equal if they are structurally identical and the nodes have the
-  //    * same value.
-  //    * <p>
-  //    * {@link TreeNode.LevelOrderSol#ITERATIVE_SOLUTION_WITH_NULL} can also be used as a solution. It
-  //    * is not a fast solution but is valid (pass all the test cases on leetcode).
-  //    *
-  //    * @param root1
-  //    * @param root2
-  //    */
-  //  def verify[T](p: Nothing, q: Nothing): Unit = {
-  //    if (p == null || q == null) {
-  //      Assert.assertEquals(p, q)
-  //      return
-  //    }
-  //    Assert.assertEquals(p.`val`, q.`val`)
-  //    verify(p.left, q.left)
-  //    verify(p.right, q.right)
-  //  }
+  def isValid(arr: Array[Array[Int]], i: Int, j: Int): Boolean = {
+    i >= 0 && j >= 0 && i < arr.length && j < arr(i).length
+  }
+
 }

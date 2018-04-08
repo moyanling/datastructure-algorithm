@@ -13,7 +13,7 @@ object NestedListWeightSum {
   def recur(nestedList: List[NestedInteger], depth: Int): Int = {
     var sum = 0
     for (nested <- nestedList) sum += (if (nested.isInteger) depth * nested.getInteger else recur(nested.getList, depth + 1))
-    return sum
+    sum
   }
 
   def main(args: Array[String]): Unit = {
