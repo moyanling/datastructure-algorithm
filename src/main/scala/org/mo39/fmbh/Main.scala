@@ -15,4 +15,6 @@ object Library {
 object Main extends App {
   def getTitle(p: Publication): String = p.title
   Library.printBookList(getTitle)
+  println("10.3" < "9.3")
+  println(10.3 > 9.3)
 }
