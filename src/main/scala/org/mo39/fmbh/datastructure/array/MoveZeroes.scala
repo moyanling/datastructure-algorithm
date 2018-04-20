@@ -1,7 +1,7 @@
 package org.mo39.fmbh.datastructure.array
 
-import org.mo39.fmbh.common.Z
 import org.mo39.fmbh.commons.utils.S.partition
+import org.mo39.fmbh.commons.utils.Z
 
 object MoveZeroes {
 

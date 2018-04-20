@@ -1,6 +1,6 @@
 package org.mo39.fmbh.datastructure.string
 
-import org.mo39.fmbh.common.Z._
+import org.mo39.fmbh.commons.utils.Z._
 
 import scala.language.implicitConversions
 

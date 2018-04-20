@@ -2,7 +2,7 @@ package org.mo39.fmbh.algorithm.graph
 
 object MaxAreaOfIsland {
 
-  import org.mo39.fmbh.common.Z._
+  import org.mo39.fmbh.commons.utils.Z._
 
   def maxAreaOfIsland(grid: Array[Array[Int]]): Int = {
     var max = 0

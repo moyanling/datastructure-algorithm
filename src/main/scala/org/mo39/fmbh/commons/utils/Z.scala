@@ -1,4 +1,4 @@
-package org.mo39.fmbh.common
+package org.mo39.fmbh.commons.utils
 
 import java.util
 //import org.junit.Assert

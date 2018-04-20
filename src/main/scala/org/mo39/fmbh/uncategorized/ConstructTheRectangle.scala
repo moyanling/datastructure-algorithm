@@ -1,6 +1,6 @@
 package org.mo39.fmbh.uncategorized
 
-import org.mo39.fmbh.common.Z
+import org.mo39.fmbh.commons.utils.Z
 
 object ConstructTheRectangle {
 
