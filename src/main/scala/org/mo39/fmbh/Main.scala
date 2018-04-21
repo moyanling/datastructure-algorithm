@@ -1,20 +1,9 @@
 package org.mo39.fmbh
 
-class Publication(val title:String)
-class Book(title:String)  extends Publication(title) {
-  def bookOnly: Unit = println("Hey?")
-}
-
-object Library {
-  val books: Set[Book] = Set(new Book("Programming in Scala"), new Book("Walden"))
-  def printBookList(info: Book => AnyRef) = {
-    for(book <- books) println(info(book))
-  }
-}
+import scala.collection.mutable.ArrayBuffer
 
 object Main extends App {
-  def getTitle(p: Publication): String = p.title
-  Library.printBookList(getTitle)
-  println("10.3" < "9.3")
-  println(10.3 > 9.3)
+  val buf = ArrayBuffer(1,2,3)
+  val bldr = buf.mapResult(_.map(_ + 3))
+  bldr.result().foreach(println)
 }

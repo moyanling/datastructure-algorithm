@@ -1,18 +1,17 @@
-
 package org.mo39.fmbh.algorithm.bitmanipulation
 
-object SingleNumber {
+import org.mo39.fmbh.commons.annotations.Sources.LeetCode
+import org.mo39.fmbh.commons.utils.Enumerable
 
-  sealed trait SingleNumber {
-    def singleNumber(nums: Array[Int]): Int
-  }
+@LeetCode
+sealed trait SingleNumber {
+  def singleNumber(nums: Array[Int]): Int
+}
 
-  case object SOLUTION extends SingleNumber {
+object SingleNumber extends Enumerable[SingleNumber] {
 
-    override def singleNumber(nums: Array[Int]): Int = {
-      nums.reduce(_ ^ _)
-    }
-
+  case object Solution extends SingleNumber {
+    override def singleNumber(nums: Array[Int]): Int = nums.reduce(_ ^ _)
   }
 
 }
