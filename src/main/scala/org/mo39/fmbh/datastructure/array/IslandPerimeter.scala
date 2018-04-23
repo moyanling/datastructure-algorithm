@@ -12,12 +12,12 @@ object IslandPerimeter {
 
     override def islandPerimeter(grid: Array[Array[Int]]): Int = {
       var result = 0
-      (0 until grid.length).foreach(i => {
-        (0 until grid(i).length).foreach(j => {
+      grid.indices.foreach(i => {
+        grid(i).indices.foreach(j => {
           if (grid(i)(j) == 1) {
             result += 4
-            if (Z.isValid(i - 1, j, grid) && grid(i - 1)(j) == 1) result -= 2
-            if (Z.isValid(i, j - 1, grid) && grid(i)(j - 1) == 1) result -= 2
+            if (Z.isValid(grid, i - 1, j) && grid(i - 1)(j) == 1) result -= 2
+            if (Z.isValid(grid, i, j - 1) && grid(i)(j - 1) == 1) result -= 2
           }
         })
       })

@@ -24,7 +24,7 @@ object KeyboardRow extends Enumeration {
   })
 
   def main(args: Array[String]): Unit = {
-    for (v <- KeyboardRow.values) Z.print(v.findWords(Array("Hello", "Alaska", "Dad", "Peace")))
+    for (v <- KeyboardRow.values) v.findWords(Array("Hello", "Alaska", "Dad", "Peace"))
   }
 
 }

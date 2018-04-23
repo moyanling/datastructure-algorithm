@@ -1,7 +1,5 @@
 package org.mo39.fmbh.uncategorized
 
-import org.mo39.fmbh.commons.utils.Z
-
 object ConstructTheRectangle {
 
   sealed trait ConstructTheRectangle {
@@ -17,7 +15,7 @@ object ConstructTheRectangle {
   }
 
   def main(args: Array[String]): Unit = {
-    Z.print(SOLUTION.constructRectangle(1))
+    SOLUTION.constructRectangle(1)
   }
 
 }

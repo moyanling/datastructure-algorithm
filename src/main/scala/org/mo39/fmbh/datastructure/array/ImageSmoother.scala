@@ -7,12 +7,12 @@ object ImageSmoother {
   def imageSmoother(M: Array[Array[Int]]): Array[Array[Int]] = {
     if (M == null || M.length < 1) return null
     val result = Array.ofDim[Int](M.length, M(0).length)
-    for (i <- 0 until M.length) {
-      for (j <- 0 until M(i).length) {
+    for (i <- M.indices) {
+      for (j <- M(i).indices) {
         var (sum, cells) = (0, 0)
         for (p <- -1 to 1) {
           for (q <- -1 to 1) {
-            if (Z.isValid(i + p, j + q, M)) {
+            if (Z.isValid(M,i + p, j + q)) {
               cells += 1
               sum += M(i + p)(j + q)
             }

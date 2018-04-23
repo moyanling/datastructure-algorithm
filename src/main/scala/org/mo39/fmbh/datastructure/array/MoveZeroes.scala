@@ -1,7 +1,6 @@
 package org.mo39.fmbh.datastructure.array
 
 import org.mo39.fmbh.commons.utils.S.partition
-import org.mo39.fmbh.commons.utils.Z
 
 object MoveZeroes {
 
@@ -18,7 +17,6 @@ object MoveZeroes {
   def main(args: Array[String]): Unit = {
     val nums = Array(0, 0, 0, 1, 2, 3, 4, 5)
     SOLUTION.moveZeroes(nums)
-    Z.print(nums)
   }
 
 }

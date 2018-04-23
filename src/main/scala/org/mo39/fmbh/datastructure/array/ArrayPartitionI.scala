@@ -1,10 +1,7 @@
 package org.mo39.fmbh.datastructure.array
 
-import org.mo39.fmbh.commons.annotations.Sources.LeetCode
-
 import scala.util.Sorting
 
-@LeetCode
 object ArrayPartitionI {
 
   def arrayPairSum(nums: Array[Int]): Int = {
@@ -12,10 +9,6 @@ object ArrayPartitionI {
     Sorting.quickSort(nums)
     for (i <- nums.indices if i % 2 == 0) sum += nums(i)
     sum
-  }
-
-  def main(args: Array[String]): Unit = {
-    println(arrayPairSum(Array(1, 4, 3, 2)))
   }
 
 }

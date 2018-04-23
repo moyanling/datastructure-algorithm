@@ -8,11 +8,8 @@ object RNA {
   abstract class Base
 
   case object A extends Base
-
   case object T extends Base
-
   case object G extends Base
-
   case object U extends Base
 
   object Base {
@@ -21,8 +18,8 @@ object RNA {
     val toInt: Base => Int = Map(A -> 0, T -> 1, G -> 2, U -> 3)
   }
 
-
-  final class RNA1 private(val groups: Array[Int], val length: Int) extends IndexedSeq[Base] {
+  final class RNA1 private (val groups: Array[Int], val length: Int)
+      extends IndexedSeq[Base] {
 
     import RNA1._
 
@@ -48,11 +45,14 @@ object RNA {
 
   }
 
-  final class RNA2 private(val groups: Array[Int], val length: Int) extends IndexedSeq[Base] with IndexedSeqLike[Base, RNA2] {
+  final class RNA2 private (val groups: Array[Int], val length: Int)
+      extends IndexedSeq[Base]
+      with IndexedSeqLike[Base, RNA2] {
 
     import RNA2._
 
-    override def newBuilder: Builder[Base, RNA2] = new ArrayBuffer[Base] mapResult fromSeq
+    override def newBuilder: Builder[Base, RNA2] =
+      new ArrayBuffer[Base] mapResult fromSeq
 
     override def apply(idx: Int): Base = {
       if (idx < 0 || length <= idx) throw new IndexOutOfBoundsException
