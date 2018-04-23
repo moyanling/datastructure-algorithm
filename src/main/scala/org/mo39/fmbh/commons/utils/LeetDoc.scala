@@ -58,20 +58,6 @@ object LeetDoc extends App with LazyLogging {
     s"https://leetcode.com/problems/$linkName/"
   }
 
-  /* Given a problem name, generate the Problem alias */
-  def aliasOf(name: String): String = {
-    val charArr = name.toCharArray
-    val charList = new StringBuilder()
-    for (i <- charArr.indices) {
-      if (i != 0 && charArr(i).isUpper
-          && (charArr(i - 1) != 'I'
-          || i < charArr.length - 1 && charArr(i + 1).isLower)
-          || !charArr(i).isLetter) charList append ' '
-      charList.append(charArr(i))
-    }
-    charList.toString
-  }
-
   /* Fetch the description of the problem */
   def fetchDesc(link: String): String = {
     val desc = Try {
@@ -135,13 +121,12 @@ object LeetDoc extends App with LazyLogging {
   else if (list.length > 1) logger.error(s"Found ${list.map(nameOf)}.")
   else {
     val name = nameOf(list.head)
-    val alias = aliasOf(name)
     logger.info(s"Found '$name'.")
     val link = linkOf(name)
     logger.info(s"Fetching $link")
     val desc = fetchDesc(link)
     if (desc != "") logger.info("Success.")
-    val leetDoc = template.format(desc, link, alias)
+    val leetDoc = template.format(desc, link, name)
     logger.info("Copying the LeetDoc to the clipboard.")
     leetDoc.toClipboard
   }
