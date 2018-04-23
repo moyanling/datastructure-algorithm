@@ -60,6 +60,28 @@ object Z {
       str
     }
 
+    /**
+      * Split the line to multiple lines to ensure the line does not exceed the width.
+      *
+      * Requires that the String only has one line.
+      */
+    def limitWidthTo(width: Int): Array[String] = {
+      require(!str.contains("\n"))
+      val charArr = str.toCharArray
+      var i = 0
+      for (j <- str.indices) {
+        if (j - i > width) {
+          // Find the last space character before the width limit
+          val k = str.lastIndexWhere(_.isSpaceChar, j)
+          if (k > i) {
+            charArr(k) = '\n'
+            i = k + 1
+          }
+        }
+      }
+      charArr.mkString.split('\n')
+    }
+
   }
 
 }

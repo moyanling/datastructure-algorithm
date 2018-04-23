@@ -62,18 +62,4 @@ object EmployeeImportance extends Enumerable[EmployeeImportance] {
     }
   }
 
-  def main(args: Array[String]): Unit = {
-    val line =
-      "For example, employee 1 is the leader of employee 2, and employee 2 is the leader of employee 3. They have importance value 15, 10 and 5, respectively. Then employee 1 has a data structure like [1, 15, [2]], and employee 2 has [2, 10, [3]], and employee 3 has [3, 5, []]. Note that although employee 3 is also a subordinate of employee 1, the relationship is not direct."
-    val charArr = line.toCharArray
-    var len = 0
-    for (i <- line.indices) {
-      if (charArr(i).isSpaceChar && len >= 70) {
-        charArr.update(i, '\n')
-        len = 0
-      } else len += 1
-    }
-    println(charArr.mkString)
-  }
-
 }

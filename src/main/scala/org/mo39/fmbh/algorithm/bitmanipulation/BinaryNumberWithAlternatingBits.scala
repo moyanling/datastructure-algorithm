@@ -56,6 +56,7 @@ sealed trait BinaryNumberWithAlternatingBits {
 object BinaryNumberWithAlternatingBits
     extends Enumerable[BinaryNumberWithAlternatingBits] {
 
+  /* Regex */
   case object Solution0 extends BinaryNumberWithAlternatingBits {
     def hasAlternatingBits(n: Int): Boolean = {
       n.toBinaryString.matches("^(10)*(1)?$")
