@@ -74,44 +74,24 @@ object LeetDoc extends App with LazyLogging {
       else desc
     }.getOrElse("")
     /* Format the description to limit its width */
-    val width = 70
-    desc
-      .split('\n')
-      .flatMap(line => {
-        if (line.length < width) List(line)
-        else {
-          val charArr = line.toCharArray
-          var len = 0
-          for (i <- line.indices) {
-            if (charArr(i).isSpaceChar && len >= width) {
-              charArr.update(i, '\n')
-              len = 0
-            } else len += 1
-          }
-          charArr.mkString.split('\n')
-        }
-      })
-      .mkString("\n")
+    desc.limitWidthTo(70).mkString("\n")
   }
 
   /**
-    * Try find the only candidate annotated by
+    * Try find a list of candidates annotated by
     * [[org.mo39.fmbh.commons.annotations.SourceValue.LeetCode]]
     * that does not yet have a comment
     */
   def findProblems: List[String] = {
-    ProblemDirs
-      .flatMap(Files.walk(_).toArray)
+    Problems
       .map(_.toString)
-      .filter(Paths.get(_).toFile.isFile)
       .filter(
         Source
           .fromFile(_)
           .getLines
           .mkString
           /* Simply use Zero-Length assertion and the annotation literal to match the file content */
-          .matches(s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\).*")
-      )
+          .matches(s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\).*"))
   }
 
   /* Main entry */
