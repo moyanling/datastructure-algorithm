@@ -3,11 +3,6 @@ package org.mo39.fmbh.commons.utils
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
 import scala.language.implicitConversions
-//import org.junit.Assert
-//import org.mo39.fmbh.datastructure.binarytree.TreeNode
-//import org.mo39.fmbh.datastructure.binarytree.TreeNode.LevelOrderSol
-//import org.mo39.fmbh.datastructure.linkedlist.ListNode
-//import com.google.common.base.Joiner
 
 /**
   * Some uncategorized util collections
@@ -51,6 +46,11 @@ object Z {
 
   implicit val toStrWrapper: String => StrWrapper = StrWrapper
 
+  /**
+    * String Wrapper. Provide some convenient methods on String.
+    *
+    * @param str
+    */
   case class StrWrapper(str: String) {
 
     /* Set the String to clipboard and return the String */
@@ -71,7 +71,7 @@ object Z {
       var i = 0
       for (j <- str.indices) {
         if (j - i > width) {
-          // Find the last space character before the width limit
+          /* Find the last space character before the width limit */
           val k = str.lastIndexWhere(_.isSpaceChar, j)
           if (k > i) {
             charArr(k) = '\n'

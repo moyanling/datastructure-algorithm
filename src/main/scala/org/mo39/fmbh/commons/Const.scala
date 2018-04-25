@@ -1,7 +1,8 @@
-package org.mo39.fmbh.commons.utils
+package org.mo39.fmbh.commons
 
 import java.io.File
 import java.nio.file.{Files, Path, Paths}
+
 import scala.collection.JavaConversions.propertiesAsScalaMap
 
 object Const {
@@ -14,10 +15,12 @@ object Const {
     Paths.get(PackageRoot.toString, "datastructure"),
     Paths.get(PackageRoot.toString, "uncategorized")
   )
-  val Problems: List[Path] = ProblemDirs
-    .flatMap(Files.walk(_).toArray)
-    .map(f => new File(f.toString))
-    .filter(_.isFile)
-    .map(_.toPath)
+  val Problems: ProblemSeq = ProblemSeq(
+    ProblemDirs
+      .flatMap(Files.walk(_).toArray)
+      .map(f => new File(f.toString))
+      .filter(_.isFile)
+      .map(Problem): _*
+  )
 
 }

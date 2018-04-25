@@ -1,11 +1,8 @@
-package org.mo39.fmbh.commons.utils
-
-import java.io.File
-import java.nio.file.{Files, Paths}
+package org.mo39.fmbh.commons
 
 import com.typesafe.scalalogging.LazyLogging
 import org.jsoup.Jsoup
-import org.mo39.fmbh.commons.utils.Const._
+import org.mo39.fmbh.commons.Const._
 import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
 import org.mo39.fmbh.commons.utils.Z.toStrWrapper
 
@@ -32,12 +29,7 @@ object LeetDoc extends App with LazyLogging {
      |"@author mo39.fmbh"
      """.stripMargin
 
-  /* Parse the file name of the problem to the actual name */
-  def nameOf(problem: String): String =
-    problem
-      .split(s"\\${File.separator}")
-      .last
-      .stripSuffix(".scala")
+  val regex = s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\).*"
 
   /* Given a problem name, generate the LeetCode link */
   def linkOf(name: String): String = {
@@ -77,30 +69,13 @@ object LeetDoc extends App with LazyLogging {
     desc.limitWidthTo(70).mkString("\n")
   }
 
-  /**
-    * Try find a list of candidates annotated by
-    * [[org.mo39.fmbh.commons.annotations.SourceValue.LeetCode]]
-    * that does not yet have a comment
-    */
-  def findProblems: List[String] = {
-    Problems
-      .map(_.toString)
-      .filter(
-        Source
-          .fromFile(_)
-          .getLines
-          .mkString
-          /* Simply use Zero-Length assertion and the annotation literal to match the file content */
-          .matches(s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\).*"))
-  }
-
   /* Main entry */
   logger.info("Starting...")
-  val list = findProblems
+  val list = Problems.filter(_.content.mkString.matches(regex))
   if (list.isEmpty) logger.error("Found nothing.")
-  else if (list.length > 1) logger.error(s"Found ${list.map(nameOf)}.")
+  else if (list.length > 1) logger.error(s"Found ${list.map(_.name)}.")
   else {
-    val name = nameOf(list.head)
+    val name = list.head.name
     logger.info(s"Found '$name'.")
     val link = linkOf(name)
     logger.info(s"Fetching $link")

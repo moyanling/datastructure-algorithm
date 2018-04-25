@@ -43,7 +43,7 @@ sealed trait NumberComplement {
 
 object NumberComplement extends Enumerable[NumberComplement] {
 
-  /* Parse the binary strign with a radix */
+  /* Parse the binary string with a radix */
   case object Solution0 extends NumberComplement {
     def findComplement(num: Int): Int = {
       Integer.parseInt(
