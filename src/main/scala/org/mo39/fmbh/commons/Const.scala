@@ -8,6 +8,7 @@ import scala.collection.JavaConversions.propertiesAsScalaMap
 object Const {
 
   val ProjectRoot: Path = Paths.get(System.getProperties()("user.dir"))
+  val ReadMe: Path = ProjectRoot.resolve(Paths.get("README.md"))
   val SrcRoot: Path = Paths.get(ProjectRoot.toString, "src", "main", "scala")
   val PackageRoot: Path = Paths.get(SrcRoot.toString, "org", "mo39", "fmbh")
   val ProblemDirs: List[Path] = List(
