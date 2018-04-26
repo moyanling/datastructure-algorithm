@@ -28,7 +28,7 @@ case class Problem(file: File) {
 
   /* Gives the git repository reference */
   val gitRepoReference: String =
-    "../blob/master/" +
+    "../master/" +
       ProjectRoot
         .relativize(file.toPath)
         .toString

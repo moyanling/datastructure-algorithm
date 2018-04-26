@@ -14,10 +14,8 @@ object TableOfContent extends App with LazyLogging {
       |## Table of Content:
       |### Data Structure
       |%s
-      |
       |### Algorithm
       |%s
-      |
       |### Uncategorized
       |%s
     """.stripMargin
@@ -26,10 +24,10 @@ object TableOfContent extends App with LazyLogging {
     problems
       .groupBy(_.category)
       .map(group =>
-        s"#### ${group._1}\n${group._2.map(toLink).mkString("\n")}")
+        s"###### ${group._1}\n${group._2.map(toLink).mkString("\n")}")
       .mkString("\n")
 
-  private val toLink = (p: Problem) => s"- [${p.name}](${p.gitRepoReference})"
+  private val toLink = (p: Problem) => s"  - [${p.name}](${p.gitRepoReference})"
 
   /* Main Entry */
   logger.info("Start updating README.md")
