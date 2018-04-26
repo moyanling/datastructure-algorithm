@@ -61,7 +61,7 @@ object LeetDoc extends App with LazyLogging {
         .first()
         .attr("content")
       /* Some problems need Premium access */
-      if (desc.contains("LeetCode Online Judge is a platform")) ""
+      if (desc.contains("Level up your coding skills and quickly land a job")) ""
       else desc
     }.getOrElse("")
     /* Format the description to limit its width */
@@ -80,6 +80,7 @@ object LeetDoc extends App with LazyLogging {
     logger.info(s"Fetching $link")
     val desc = fetchDesc(link)
     if (desc != "") logger.info("Success.")
+    else logger.info("╮(╯_╰)╭")
     val leetDoc = template.format(desc, link, name)
     logger.info("Copying the LeetDoc to the clipboard.")
     leetDoc.toClipboard
