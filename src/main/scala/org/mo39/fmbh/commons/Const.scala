@@ -15,12 +15,21 @@ object Const {
     Paths.get(PackageRoot.toString, "datastructure"),
     Paths.get(PackageRoot.toString, "uncategorized")
   )
-  val Problems: ProblemSeq = ProblemSeq(
-    ProblemDirs
-      .flatMap(Files.walk(_).toArray)
+  val AlgorithmProblems: Array[Problem] = toProblemArr(ProblemDirs.head)
+  val DatastructureProblems: Array[Problem] = toProblemArr(ProblemDirs(1))
+  val UncategorizedProblems: Array[Problem] = toProblemArr(ProblemDirs.last)
+  val Problems: List[Problem] = List(
+    AlgorithmProblems,
+    DatastructureProblems,
+    UncategorizedProblems
+  ).flatten
+
+  private def toProblemArr(p: Path) =
+    Files
+      .walk(p)
+      .toArray
       .map(f => new File(f.toString))
       .filter(_.isFile)
-      .map(Problem): _*
-  )
+      .map(Problem)
 
 }

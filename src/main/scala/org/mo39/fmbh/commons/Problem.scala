@@ -1,12 +1,11 @@
 package org.mo39.fmbh.commons
 
 import java.io.File
+import java.nio.file.Paths
 
 import org.apache.commons.io.FilenameUtils.removeExtension
+import org.mo39.fmbh.commons.Const._
 
-import scala.collection.IndexedSeqLike
-import scala.collection.mutable.Builder
-import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 
 /* Case class presenting a Problem */
@@ -20,36 +19,21 @@ case class Problem(file: File) {
   /* Read the content of the file */
   lazy val content: Iterator[String] = Source.fromFile(file).getLines
 
-  val category: String = file.getParent
+  /* Gives a category of the problem */
+  val category: String =
+    PackageRoot
+      .relativize(Paths.get(file.getParent))
+      .getFileName
+      .toString
+
+  /* Gives the git repository reference */
+  val gitRepoReference: String =
+    "../blob/master/" +
+      ProjectRoot
+        .relativize(file.toPath)
+        .toString
+        .replace(File.separator, "/")
 
   override def toString: String = name
 
-}
-
-/**
-  * Sequence of problems collection
-  *
-  * @param buffer A Problem ArrayBuffer
-  */
-final class ProblemSeq(private val buffer: ArrayBuffer[Problem],
-                       val length: Int)
-    extends IndexedSeq[Problem]
-    with IndexedSeqLike[Problem, ProblemSeq] {
-
-  def apply(index: Int): Problem = {
-    if (index < 0 || length <= index) throw new IndexOutOfBoundsException
-    buffer(index)
-  }
-
-  /* Builder method to build the result of methods like Filter */
-  override protected[this] def newBuilder: Builder[Problem, ProblemSeq] = {
-    new ArrayBuffer[Problem].mapResult(arr => new ProblemSeq(arr, arr.length))
-  }
-
-}
-
-object ProblemSeq {
-  def apply(problems: Problem*): ProblemSeq = {
-    new ProblemSeq(problems.to[ArrayBuffer], problems.length)
-  }
 }
