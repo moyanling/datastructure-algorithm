@@ -2,8 +2,8 @@
 # datastructure-algorithms
 
 ## Table of Content:
-##### Data Structure
-######binarytree
+### Data Structure
+#### binarytree
 - [AverageOfLevelsInBinaryTree](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/AverageOfLevelsInBinaryTree.scala)
 - [ConstructStringFromBinaryTree](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/ConstructStringFromBinaryTree.scala)
 - [ConvertBstToGreaterTree](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/ConvertBstToGreaterTree.scala)
@@ -12,13 +12,13 @@
 - [MergeTwoBinaryTrees](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/MergeTwoBinaryTrees.scala)
 - [TrimABinarySearchTree](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/TrimABinarySearchTree.scala)
 - [TwoSumIvInputIsABst](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/TwoSumIvInputIsABst.scala)
-######design
+#### design
 - [LoggerRateLimiter](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/design/LoggerRateLimiter.scala)
 - [MovingAverageFromDataStream](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/design/MovingAverageFromDataStream.scala)
 - [RNA](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/design/RNA.scala)
-######queue
+#### queue
 - [MovingAverageFromDataStream](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/queue/MovingAverageFromDataStream.scala)
-######string
+#### string
 - [AddStrings](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/string/AddStrings.scala)
 - [DetectCapital](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/string/DetectCapital.scala)
 - [FizzBuzz](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/string/FizzBuzz.scala)
@@ -26,7 +26,7 @@
 - [JudgeRouteCircle](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/string/JudgeRouteCircle.scala)
 - [LongestUncommonSubsequenceI](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/string/LongestUncommonSubsequenceI.scala)
 - [ReverseString](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/string/ReverseString.scala)
-######array
+#### array
 - [ArrayPartitionI](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/array/ArrayPartitionI.scala)
 - [ContainsDuplicate](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/array/ContainsDuplicate.scala)
 - [DistributeCandies](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/array/DistributeCandies.scala)
@@ -48,7 +48,7 @@
 - [ReverseWordsInAStringIii](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/array/ReverseWordsInAStringIii.scala)
 - [SetMismatch](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/array/SetMismatch.scala)
 - [ToeplitzMatrix](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/array/ToeplitzMatrix.scala)
-######hash
+#### hash
 - [FindAnagramMappings](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/hash/FindAnagramMappings.scala)
 - [FindTheDifference](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/hash/FindTheDifference.scala)
 - [JewelsAndStones](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/hash/JewelsAndStones.scala)
@@ -61,24 +61,24 @@
 - [TwoSum](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/hash/TwoSum.scala)
 - [UniqueMorseCodeWords](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/hash/UniqueMorseCodeWords.scala)
 - [ValidAnagram](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/hash/ValidAnagram.scala)
-######stack
+#### stack
 - [BaseballGame](../blob/master/src/main/scala/org/mo39/fmbh/datastructure/stack/BaseballGame.scala)
 
-##### Algorithm
-######bitmanipulation
+### Algorithm
+#### bitmanipulation
 - [BinaryNumberWithAlternatingBits](../blob/master/src/main/scala/org/mo39/fmbh/algorithm/bitmanipulation/BinaryNumberWithAlternatingBits.scala)
 - [NumberComplement](../blob/master/src/main/scala/org/mo39/fmbh/algorithm/bitmanipulation/NumberComplement.scala)
 - [SingleNumber](../blob/master/src/main/scala/org/mo39/fmbh/algorithm/bitmanipulation/SingleNumber.scala)
-######dfs
+#### dfs
 - [EmployeeImportance](../blob/master/src/main/scala/org/mo39/fmbh/algorithm/dfs/EmployeeImportance.scala)
-######graph
+#### graph
 - [MaxAreaOfIsland](../blob/master/src/main/scala/org/mo39/fmbh/algorithm/graph/MaxAreaOfIsland.scala)
-######sort
+#### sort
 - [FindAllNumbersDisappearedInAnArray](../blob/master/src/main/scala/org/mo39/fmbh/algorithm/sort/FindAllNumbersDisappearedInAnArray.scala)
-######slidingwindow
+#### slidingwindow
 - [SlidingWindowMaximum](../blob/master/src/main/scala/org/mo39/fmbh/algorithm/slidingwindow/SlidingWindowMaximum.scala)
 
-##### Uncategorized
+### Uncategorized
 - [ConstructTheRectangle](../blob/master/src/main/scala/org/mo39/fmbh/uncategorized/ConstructTheRectangle.scala)
 - [NumberOfLinesToWriteString](../blob/master/src/main/scala/org/mo39/fmbh/uncategorized/NumberOfLinesToWriteString.scala)
 - [OneBitAndTwoBitCharacters](../blob/master/src/main/scala/org/mo39/fmbh/uncategorized/OneBitAndTwoBitCharacters.scala)
