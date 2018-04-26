@@ -9,9 +9,8 @@ object TableOfContent extends App with LazyLogging {
 
   val template: String =
     s"""
-      |# datastructure-algorithms
+      |# Table of Content
       |
-      |## Table of Content:
       |### Data Structure
       |%s
       |### Algorithm

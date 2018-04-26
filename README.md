@@ -1,7 +1,6 @@
 
-# datastructure-algorithms
+# Table of Content
 
-## Table of Content:
 ### Data Structure
 ###### binarytree
   - [AverageOfLevelsInBinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/AverageOfLevelsInBinaryTree.scala)
