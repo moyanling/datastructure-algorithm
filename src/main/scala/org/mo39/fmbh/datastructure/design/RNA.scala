@@ -14,7 +14,7 @@ object RNA {
 
   object Base {
     // Int to Base signature matches Array[Base].apply method reference and ".apply" can be hidden
-    val fromInt: Int => Base = LowPriorityImplicits.wrapRefArray(Array(A, T, G, U))
+    val fromInt: Int => Base = Array(A, T, G, U)
     val toInt: Base => Int = Map(A -> 0, T -> 1, G -> 2, U -> 3)
   }
 

@@ -11,24 +11,24 @@ object TableOfContent extends App {
       |# datastructure-algorithms
       |
       |## Table of Content:
-      |###### Data Structure
+      |##### Data Structure
       |%s
       |
-      |###### Algorithm
+      |##### Algorithm
       |%s
       |
-      |###### Uncategorized
+      |##### Uncategorized
       |%s
     """.stripMargin
 
   private def listProblems(problems: Array[Problem]) =
     problems
       .groupBy(_.category)
-      .map(group => s"\t${group._1}\n${group._2.map(toLink).mkString("\n")}")
+      .map(group =>
+        s"######${group._1}\n${group._2.map(toLink).mkString("\n")}")
       .mkString("\n")
 
-  private val toLink = (p: Problem) =>
-    s"\t\t- [${p.name}](${p.gitRepoReference})"
+  private val toLink = (p: Problem) => s"- [${p.name}](${p.gitRepoReference})"
 
   val ReadMeContent = template.format(
     listProblems(DatastructureProblems),
