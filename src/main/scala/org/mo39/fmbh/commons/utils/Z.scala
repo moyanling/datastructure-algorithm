@@ -79,7 +79,7 @@ object Z {
           }
         }
       }
-      charArr.mkString.split('\n')
+      String.valueOf(charArr).split('\n')
     }
 
   }

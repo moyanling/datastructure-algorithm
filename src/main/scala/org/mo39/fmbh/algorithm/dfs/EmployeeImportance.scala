@@ -7,7 +7,6 @@ import org.mo39.fmbh.commons.annotations.ProblemSource
 import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
 
 /**
-  *
   * {{{
   * You are given a data structure of employee information, which includes
   * the employee's unique id, his importance value and his direct subordinates'
@@ -40,8 +39,8 @@ import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
   * The maximum number of employees won't exceed 2000.
   * }}}
   *
-  * "@see [[https://leetcode.com/problems/employee-importance/ Employee Importance]]"
-  * "@author mo39.fmbh"
+  * @see [[https://leetcode.com/problems/employee-importance/ Employee Importance]]
+  * @author mo39.fmbh
   */
 @ProblemSource(LeetCode)
 sealed trait EmployeeImportance {

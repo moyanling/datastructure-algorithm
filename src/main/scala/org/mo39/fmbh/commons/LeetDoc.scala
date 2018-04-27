@@ -19,14 +19,12 @@ import scala.util.Try
 object LeetDoc extends App with LazyLogging {
 
   val template =
-    s"""
-     |{{{
+    s"""{{{
      |%s
      |}}}
      |
-     |"@see [[%s %s]]"
-     |"@author mo39.fmbh"
-     """.stripMargin
+     |@see [[%s %s]]
+     |@author mo39.fmbh""".stripMargin
 
   val regex = s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\).*"
 
@@ -50,7 +48,7 @@ object LeetDoc extends App with LazyLogging {
   }
 
   /* Fetch the description of the problem */
-  def fetchDesc(link: String): String = {
+  private def fetchDesc(link: String): String = {
     val desc = Try {
       val desc = Jsoup
         .connect(link)
@@ -61,11 +59,17 @@ object LeetDoc extends App with LazyLogging {
         .first()
         .attr("content")
       /* Some problems need Premium access */
-      if (desc.contains("Level up your coding skills and quickly land a job")) ""
+      if (desc.contains("Level up your coding skills")) ""
       else desc
     }.getOrElse("")
     /* Format the description to limit its width */
-    desc.limitWidthTo(70).mkString("\n")
+    desc.split('\n').flatMap(_.limitWidthTo(70)).mkString("\n")
+  }
+
+  /* Format the LeetDoc */
+  private def format(str: String) = {
+    val content = str.split('\n').map(s => s"  * $s").toList
+    ("/**" :: content ::: " */" :: Nil).mkString("\n")
   }
 
   /* Main entry */
@@ -83,7 +87,7 @@ object LeetDoc extends App with LazyLogging {
     else logger.info("╮(╯_╰)╭")
     val leetDoc = template.format(desc, link, name)
     logger.info("Copying the LeetDoc to the clipboard.")
-    leetDoc.toClipboard
+    format(leetDoc).toClipboard
   }
   logger.info("Done.")
 
