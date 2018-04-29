@@ -7,6 +7,7 @@ import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
 import org.mo39.fmbh.commons.utils.Z.toStrWrapper
 
 import scala.util.Try
+import org.apache.commons.text.StringEscapeUtils.unescapeHtml4
 
 /**
   * Get the LeetDoc description to the clipboard with the signature.
@@ -63,7 +64,7 @@ object LeetDoc extends App with LazyLogging {
       else desc
     }.getOrElse("")
     /* Format the description to limit its width */
-    desc.split('\n').flatMap(_.limitWidthTo(70)).mkString("\n")
+    unescapeHtml4(desc).split('\n').flatMap(_.limitWidthTo(70)).mkString("\n")
   }
 
   /* Format the LeetDoc */
