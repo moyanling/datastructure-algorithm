@@ -4,6 +4,8 @@ import org.mo39.fmbh.commons.annotations.ProblemSource
 import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
 import org.mo39.fmbh.commons.utils.Enumerable
 
+import scala.collection.mutable.ListBuffer
+
 /**
   * {{{
   * Given a start IP address ip and a number of ips we need to cover n, return a representation of the range as a list (of smallest possible length) of CIDR blocks.
@@ -59,6 +61,18 @@ sealed trait IpToCidr {
 object IpToCidr extends Enumerable[IpToCidr] {
 
   case object Solution extends IpToCidr {
+
+    val map = Map(0 -> 1,
+               1 -> 2,
+               2 -> 4,
+               3 -> 8,
+               4 -> 16,
+               5 -> 32,
+               6 -> 64,
+               7 -> 128,
+               8 -> 256,
+               9 -> 512)
+
     override def ipToCIDR(ip: String, n: Int): List[String] = ???
   }
 

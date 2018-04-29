@@ -2,7 +2,10 @@ package org.mo39.fmbh.commons.utils
 
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
+
 import scala.language.implicitConversions
+import scala.reflect.runtime.universe
+import scala.util.Try
 
 /**
   * Some uncategorized util collections
@@ -80,6 +83,16 @@ object Z {
         }
       }
       String.valueOf(charArr).split('\n')
+    }
+
+    lazy val runtimeMirror = universe.runtimeMirror(getClass.getClassLoader)
+
+    /* String to Object */
+    def toObject[T]: Try[T] = {
+      Try {
+        val module = runtimeMirror.staticModule(str)
+        runtimeMirror.reflectModule(module).instance.asInstanceOf[T]
+      }
     }
 
   }

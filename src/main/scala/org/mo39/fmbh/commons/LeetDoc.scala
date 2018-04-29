@@ -69,7 +69,7 @@ object LeetDoc extends App with LazyLogging {
   /* Format the LeetDoc */
   private def format(str: String) = {
     val content = str.split('\n').map(s => s"  * $s").toList
-    ("/**" :: content ::: " */" :: Nil).mkString("\n")
+    ("\n/**" :: content ::: " */" :: Nil).mkString("\n")
   }
 
   /* Main entry */

@@ -1,7 +1,6 @@
 package org.mo39.fmbh.commons.utils
 
-import scala.reflect.runtime.universe
-import scala.util.Try
+import org.mo39.fmbh.commons.utils.Z._
 
 /**
   * Makes the class enumerable as a type of trait T giving a naming convention as follows:
@@ -18,22 +17,17 @@ trait Enumerable[T] {
   def values: List[T] = {
     val s = this.getClass.getName
     val prefix = s.substring(0, s.length - 1)
-    val singleSolution = forName(s"$prefix.Solution")
-    if (singleSolution.isSuccess) return List(singleSolution.get)
-    Stream
-      .from(0)
-      .map(i => forName(s"$prefix.Solution$i"))
-      .takeWhile(_.isSuccess)
-      .toList
-      .map(_.get)
-  }
-
-  private def forName(fullName: String): Try[T] = {
-    Try {
-      val runtimeMirror = universe.runtimeMirror(getClass.getClassLoader)
-      val module = runtimeMirror.staticModule(fullName)
-      runtimeMirror.reflectModule(module).instance.asInstanceOf[T]
-    }
+    val singleSolution = s"$prefix.Solution".toObject
+    val list =
+      if (singleSolution.isSuccess) List(singleSolution)
+      else {
+        Stream
+          .from(0)
+          .map(i => s"$prefix.Solution$i".toObject)
+          .takeWhile(_.isSuccess)
+          .toList
+      }
+    list.map(_.get.asInstanceOf[T])
   }
 
 }
