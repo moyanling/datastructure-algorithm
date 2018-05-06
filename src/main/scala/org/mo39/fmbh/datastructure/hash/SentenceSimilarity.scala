@@ -52,12 +52,14 @@ object SentenceSimilarity extends Enumerable[SentenceSimilarity] {
                                      words2: Array[String],
                                      pairs: Array[Array[String]]): Boolean = {
       if (words1.length != words2.length) return false
-      val map = pairs.map(arr => arr(0) -> arr(1)).toMap
-      words1.indices.forall(
-        i =>
-          words1(i) == words2(i)
-            || map.getOrElse(words1(i), null) == words2(i)
-            || map.getOrElse(words2(i), null) == words1(i))
+      val m1 = pairs.groupBy(_(0)).map(g => g._1 -> g._2.map(_(1)).toSet)
+      val m2 = pairs.groupBy(_(1)).map(g => g._1 -> g._2.map(_(0)).toSet)
+      words1.indices.forall(i => {
+        val (w1, w2) = (words1(i), words2(i))
+        w1 == w2 ||
+        (m1.contains(w1) && m1(w1).contains(w2)) ||
+        (m2.contains(w1) && m2(w1).contains(w2))
+      })
     }
   }
 }

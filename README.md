@@ -19,8 +19,10 @@
   - [MovingAverageFromDataStream](../master/src/main/scala/org/mo39/fmbh/datastructure/queue/MovingAverageFromDataStream.scala)
 ###### string
   - [AddStrings](../master/src/main/scala/org/mo39/fmbh/datastructure/string/AddStrings.scala)
+  - [CountBinarySubstrings](../master/src/main/scala/org/mo39/fmbh/datastructure/string/CountBinarySubstrings.scala)
   - [DetectCapital](../master/src/main/scala/org/mo39/fmbh/datastructure/string/DetectCapital.scala)
   - [FizzBuzz](../master/src/main/scala/org/mo39/fmbh/datastructure/string/FizzBuzz.scala)
+  - [GoatLatin](../master/src/main/scala/org/mo39/fmbh/datastructure/string/GoatLatin.scala)
   - [IpToCidr](../master/src/main/scala/org/mo39/fmbh/datastructure/string/IpToCidr.scala)
   - [JudgeRouteCircle](../master/src/main/scala/org/mo39/fmbh/datastructure/string/JudgeRouteCircle.scala)
   - [LongestUncommonSubsequenceI](../master/src/main/scala/org/mo39/fmbh/datastructure/string/LongestUncommonSubsequenceI.scala)
@@ -29,10 +31,13 @@
   - [ArrayPartitionI](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ArrayPartitionI.scala)
   - [ContainsDuplicate](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ContainsDuplicate.scala)
   - [DistributeCandies](../master/src/main/scala/org/mo39/fmbh/datastructure/array/DistributeCandies.scala)
+  - [FindAllNumbersDisappearedInAnArray](../master/src/main/scala/org/mo39/fmbh/datastructure/array/FindAllNumbersDisappearedInAnArray.scala)
+  - [FindSmallestLetterGreaterThanTarget](../master/src/main/scala/org/mo39/fmbh/datastructure/array/FindSmallestLetterGreaterThanTarget.scala)
   - [FirstUniqueCharacterInAString](../master/src/main/scala/org/mo39/fmbh/datastructure/array/FirstUniqueCharacterInAString.scala)
   - [FlipGame](../master/src/main/scala/org/mo39/fmbh/datastructure/array/FlipGame.scala)
   - [ImageSmoother](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ImageSmoother.scala)
   - [IslandPerimeter](../master/src/main/scala/org/mo39/fmbh/datastructure/array/IslandPerimeter.scala)
+  - [LargestNumberAtLeastTwiceOfOthers](../master/src/main/scala/org/mo39/fmbh/datastructure/array/LargestNumberAtLeastTwiceOfOthers.scala)
   - [MajorityElement](../master/src/main/scala/org/mo39/fmbh/datastructure/array/MajorityElement.scala)
   - [MaxConsecutiveOnes](../master/src/main/scala/org/mo39/fmbh/datastructure/array/MaxConsecutiveOnes.scala)
   - [MaximumAverageSubarrayI](../master/src/main/scala/org/mo39/fmbh/datastructure/array/MaximumAverageSubarrayI.scala)
@@ -52,9 +57,14 @@
   - [FindTheDifference](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/FindTheDifference.scala)
   - [JewelsAndStones](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/JewelsAndStones.scala)
   - [KeyboardRow](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/KeyboardRow.scala)
+  - [LongestWordInDictionary](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/LongestWordInDictionary.scala)
   - [MinimumIndexSumOfTwoLists](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/MinimumIndexSumOfTwoLists.scala)
+  - [MostCommonWord](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/MostCommonWord.scala)
   - [PalindromePermutation](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/PalindromePermutation.scala)
   - [RansomNote](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/RansomNote.scala)
+  - [RotatedDigits](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/RotatedDigits.scala)
+  - [SentenceSimilarity](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/SentenceSimilarity.scala)
+  - [ShortestDistanceToACharacter](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/ShortestDistanceToACharacter.scala)
   - [ShortestWordDistance](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/ShortestWordDistance.scala)
   - [SubdomainVisitCount](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/SubdomainVisitCount.scala)
   - [TwoSum](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/TwoSum.scala)
@@ -63,16 +73,21 @@
 ###### stack
   - [BaseballGame](../master/src/main/scala/org/mo39/fmbh/datastructure/stack/BaseballGame.scala)
 ### Algorithm
+###### dynamicprogramming
+  - [MinCostClimbingStairs](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/MinCostClimbingStairs.scala)
 ###### bitmanipulation
   - [BinaryNumberWithAlternatingBits](../master/src/main/scala/org/mo39/fmbh/algorithm/bitmanipulation/BinaryNumberWithAlternatingBits.scala)
   - [NumberComplement](../master/src/main/scala/org/mo39/fmbh/algorithm/bitmanipulation/NumberComplement.scala)
   - [SingleNumber](../master/src/main/scala/org/mo39/fmbh/algorithm/bitmanipulation/SingleNumber.scala)
+  - [SumOfTwoIntegers](../master/src/main/scala/org/mo39/fmbh/algorithm/bitmanipulation/SumOfTwoIntegers.scala)
 ###### dfs
   - [EmployeeImportance](../master/src/main/scala/org/mo39/fmbh/algorithm/dfs/EmployeeImportance.scala)
+###### bruteforce
+  - [LargestTriangleArea](../master/src/main/scala/org/mo39/fmbh/algorithm/bruteforce/LargestTriangleArea.scala)
 ###### graph
   - [MaxAreaOfIsland](../master/src/main/scala/org/mo39/fmbh/algorithm/graph/MaxAreaOfIsland.scala)
 ###### sort
-  - [FindAllNumbersDisappearedInAnArray](../master/src/main/scala/org/mo39/fmbh/algorithm/sort/FindAllNumbersDisappearedInAnArray.scala)
+  - [MeetingRooms](../master/src/main/scala/org/mo39/fmbh/algorithm/sort/MeetingRooms.scala)
 ###### slidingwindow
   - [SlidingWindowMaximum](../master/src/main/scala/org/mo39/fmbh/algorithm/slidingwindow/SlidingWindowMaximum.scala)
 ### Uncategorized
