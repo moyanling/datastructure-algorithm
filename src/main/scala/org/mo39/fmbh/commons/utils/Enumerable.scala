@@ -1,6 +1,7 @@
 package org.mo39.fmbh.commons.utils
 
 import org.mo39.fmbh.commons.utils.Z._
+import org.mo39.fmbh.datastructure.hash.SentenceSimilarity
 
 /**
   * Makes the class enumerable as a type of trait T giving a naming convention as follows:

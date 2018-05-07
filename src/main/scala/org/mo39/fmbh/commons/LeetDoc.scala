@@ -27,6 +27,11 @@ object LeetDoc extends App with LazyLogging {
      |@see [[%s %s]]
      |@author mo39.fmbh""".stripMargin
 
+  /**
+    * Some requirements are:
+    * 1. Comment ending should not lies before the annotation
+    * 2. The annotation must be followed by a sealed trait
+    */
   val regex = s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\).*"
 
   /* Given a problem name, generate the LeetCode link */

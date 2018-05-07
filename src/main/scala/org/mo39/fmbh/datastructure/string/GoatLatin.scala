@@ -63,7 +63,7 @@ import org.mo39.fmbh.commons.utils.Enumerable
   * @author mo39.fmbh
   */
 @ProblemSource(LeetCode)
-trait GoatLatin {
+sealed trait GoatLatin {
   def toGoatLatin(S: String): String
 }
 
