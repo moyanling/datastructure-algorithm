@@ -50,7 +50,6 @@ trait CountBinarySubstrings {
 
 object CountBinarySubstrings extends Enumerable[CountBinarySubstrings] {
 
-
   /* Iterate over length. Ugly and dumb. */
   @TLE
   case object Solution0 extends CountBinarySubstrings {
@@ -77,7 +76,7 @@ object CountBinarySubstrings extends Enumerable[CountBinarySubstrings] {
   case object Solution1 extends CountBinarySubstrings {
     override def countBinarySubstrings(s: String): Int = {
       var count, i, len = 0
-      for (j <- 1 until s.length if s(i) != s(j)) {
+      for (j <- 1 to s.length if s(i) != s(j)) {
         if (len != 0) count += math.min(len, j - i)
         len = j - i
         i = j
@@ -86,7 +85,20 @@ object CountBinarySubstrings extends Enumerable[CountBinarySubstrings] {
     }
   }
 
+  /* Enhance the logic of Solution1 */
   case object Solution2 extends CountBinarySubstrings {
+    override def countBinarySubstrings(s: String): Int = {
+      var count, i, len = 0
+      for (j <- 1 to s.length if j == s.length || s(i) != s(j)) {
+        if (len != 0) count += math.min(len, j - i)
+        len = j - i
+        i = j
+      }
+      count
+    }
+  }
+
+  case object Solution3 extends CountBinarySubstrings {
     override def countBinarySubstrings(s: String): Int = ???
   }
 

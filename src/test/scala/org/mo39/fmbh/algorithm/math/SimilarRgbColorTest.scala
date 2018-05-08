@@ -1,6 +1,7 @@
 package org.mo39.fmbh.algorithm.math
 
 import org.mo39.fmbh.commons.MoTestSuite
+import org.mo39.fmbh.datastructure.array.SimilarRgbColor
 import org.scalatest.FunSuite
 
 class SimilarRgbColorTest extends MoTestSuite[SimilarRgbColor] {
@@ -14,9 +15,8 @@ class SimilarRgbColorTest extends MoTestSuite[SimilarRgbColor] {
 class SimilarRgbColorSubTest extends FunSuite {
 
   test("min function unit test") {
-    assert(SimilarRgbColor.Solution.min(Seq(0, 9)) === 1)
-    assert(SimilarRgbColor.Solution.min(Seq(1, 10)) === 3)
-    assert(SimilarRgbColor.Solution.min(Seq(15, 12)) === 13)
+    assert(SimilarRgbColor.Solution.closest("09") === "11")
+    assert(SimilarRgbColor.Solution.closest("f1") === "ee")
   }
 
 }
