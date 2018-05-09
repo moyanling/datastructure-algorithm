@@ -1,7 +1,10 @@
 package org.mo39.fmbh.commons.utils
-
+import scala.reflect.runtime.universe._
 import java.awt.Toolkit
 import java.awt.datatransfer.StringSelection
+
+import org.mo39.fmbh.commons.classes.TreeNode
+import org.mo39.fmbh.datastructure.binarytree.SerializeAndDeserializeBinaryTree
 
 import scala.language.implicitConversions
 import scala.reflect.runtime.universe
@@ -87,11 +90,33 @@ object Z {
 
     lazy val runtimeMirror = universe.runtimeMirror(getClass.getClassLoader)
 
-    /* String to Object */
+    /**
+      * String to Object
+      * The method tries to find the companion Object of generic type T.
+      *
+      * @tparam T the type of the class or trait of the companion Object
+      */
     def toObject[T]: Try[T] = {
       Try {
         val module = runtimeMirror.staticModule(str)
         runtimeMirror.reflectModule(module).instance.asInstanceOf[T]
+      }
+    }
+
+    /**
+      * String to Instance
+      * The methods uses deserialize method to make a new instance
+      *
+      * @tparam T the type of the expected instance
+      */
+    def as[T: TypeTag]: T = {
+      val t = typeOf[T]
+      t match {
+        case _ if t == typeOf[TreeNode] =>
+          SerializeAndDeserializeBinaryTree.Solution0
+            .deserialize(str)
+            .asInstanceOf[T]
+        case _ => throw new UnsupportedOperationException
       }
     }
 

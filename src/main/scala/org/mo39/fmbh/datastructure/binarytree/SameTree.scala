@@ -60,10 +60,13 @@ sealed trait SameTree {
 object SameTree extends Enumerable[SameTree] {
   case object Solution extends SameTree {
     override def isSameTree(p: TreeNode, q: TreeNode): Boolean = {
-      p == null && q == null ||
-      p.value == q.value &&
-      isSameTree(p.left, q.left) &&
-      isSameTree(p.right, q.right)
+      if (p == null) q == null
+      else if (q == null) p == null
+      else {
+        p.value == q.value &&
+        isSameTree(p.left, q.left) &&
+        isSameTree(p.right, q.right)
+      }
     }
   }
 }

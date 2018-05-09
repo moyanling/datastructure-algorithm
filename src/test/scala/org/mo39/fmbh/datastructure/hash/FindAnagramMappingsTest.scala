@@ -8,7 +8,7 @@ class FindAnagramMappingsTest extends MoTestSuite[FindAnagramMappings] {
     assert(
       solution
         .anagramMappings(Array(12, 28, 46, 32, 50), Array(50, 12, 32, 46, 28))
-        .deep === Array(1, 4, 3, 2, 0).deep)
+        === Array(1, 4, 3, 2, 0))
   }
 
 }

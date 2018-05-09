@@ -71,32 +71,37 @@ case object SerializeAndDeserializeBinaryTree
         level = if (nextLevel.exists(_ != null)) nextLevel else Nil
       }
       list = list.dropRight(list.length - list.lastIndexWhere(_ != null) - 1)
-      "[" + list.mkString(", ") + "]"
+      "[" + list.mkString(",") + "]"
     }
 
     override def deserialize(s: String): TreeNode = {
       require(s != null)
       if (s == "[]") return null
-      val arr = s.stripPrefix("[").stripSuffix("]").split(",").map(_.trim)
-      val mkNode = (i: Int) => {
-        if (arr(i) == "null") null else TreeNode(arr(i).toInt)
-      }
-      val root = mkNode(0)
-      var (i, level) = (0, List(root))
-      while (level.nonEmpty) {
-        var nextLevel = ListBuffer[TreeNode]()
-        for (node <- level) {
-          i += 2
-          if (node != null) {
-            node.left = mkNode(i - 1)
-            node.right = mkNode(i)
-            nextLevel ++= List(node.left, node.right)
-          } else nextLevel ++= List(null, null)
-        }
-        level = if (i >= arr.length - 1) Nil else nextLevel.toList
-      }
-      root
+      SerializeAndDeserializeBinaryTree.deserialize(s, "null")
     }
+  }
+
+  private def deserialize(s: String, nullPresentation: String) = {
+    val arr = s.stripPrefix("[").stripSuffix("]").split(",").map(_.trim)
+    val mkNode = (i: Int) => {
+      if (arr(i) == nullPresentation) null
+      else TreeNode(arr(i).toInt)
+    }
+    val root = mkNode(0)
+    var (i, level) = (0, List(root))
+    while (level.nonEmpty) {
+      var nextLevel = ListBuffer[TreeNode]()
+      for (node <- level) {
+        i += 2
+        if (node != null) {
+          node.left = mkNode(i - 1)
+          node.right = mkNode(i)
+          nextLevel ++= List(node.left, node.right)
+        } else nextLevel ++= List(null, null)
+      }
+      level = if (i >= arr.length - 1) Nil else nextLevel.toList
+    }
+    root
   }
 
   case object Solution1 extends SerializeAndDeserializeBinaryTree {
@@ -120,7 +125,9 @@ case object SerializeAndDeserializeBinaryTree
     override def deserialize(s: String): TreeNode = {
       require(s != null && s.contains('\n') || s == "null")
       if (s == "null") return null
-      Solution0.deserialize("[" + s.split('\n').mkString(", ") + "]")
+      SerializeAndDeserializeBinaryTree.deserialize(
+        "[" + s.split('\n').mkString(", ") + "]",
+        "#")
     }
   }
 }

@@ -1,7 +1,6 @@
-package org.mo39.fmbh.algorithm.math
+package org.mo39.fmbh.datastructure.array
 
 import org.mo39.fmbh.commons.MoTestSuite
-import org.mo39.fmbh.datastructure.array.SimilarRgbColor
 import org.scalatest.FunSuite
 
 class SimilarRgbColorTest extends MoTestSuite[SimilarRgbColor] {
