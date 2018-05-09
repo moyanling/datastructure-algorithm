@@ -50,11 +50,13 @@ import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 @ProblemSource(LeetCode)
 sealed trait SerializeAndDeserializeBinaryTree {
   def serialize(treeNode: TreeNode): String
+
   def deserialize(s: String): TreeNode
 }
 
 case object SerializeAndDeserializeBinaryTree
     extends Enumerable[SerializeAndDeserializeBinaryTree] {
+
   /* It follows the LeetCode serialize format */
   case object Solution0 extends SerializeAndDeserializeBinaryTree {
     override def serialize(treeNode: TreeNode): String = {
@@ -85,10 +87,11 @@ case object SerializeAndDeserializeBinaryTree
         var nextLevel = ListBuffer[TreeNode]()
         for (node <- level) {
           i += 2
-          if (node != null) node.left = mkNode(i - 1)
-          if (node != null) node.right = mkNode(i)
-          if (node != null) nextLevel ++= List(node.left, node.right)
-          else nextLevel ++= List(null, null)
+          if (node != null) {
+            node.left = mkNode(i - 1)
+            node.right = mkNode(i)
+            nextLevel ++= List(node.left, node.right)
+          } else nextLevel ++= List(null, null)
         }
         level = if (i >= arr.length - 1) Nil else nextLevel.toList
       }
@@ -97,19 +100,19 @@ case object SerializeAndDeserializeBinaryTree
   }
 
   case object Solution1 extends SerializeAndDeserializeBinaryTree {
-    override def serialize(treeNode: TreeNode): String = {
-      if (treeNode == null) return "null"
-      var (buf, level) = (ArrayBuffer[String](), List(treeNode))
+    override def serialize(root: TreeNode): String = {
+      if (root == null) return "null"
+      var (buf, level) = (ArrayBuffer[String](), List(root))
       while (level.nonEmpty) {
         buf += level
-          .map(node => if (node == null) "#" else node.value.toString)
+          .map(n => if (n == null) "#" else n.value.toString)
           .mkString(", ")
-        level = level.flatMap(
-          node =>
-            if (node != null) List(node.left, node.right)
-            else List(null, null))
-        val set = level.to[Set]
-        if (set.size == 1 && set.contains(null)) level = Nil
+        var next = ListBuffer[TreeNode]()
+        for (node <- level) {
+          if (node != null) next ++= List(node.left, node.right)
+          else next ++= List(null, null)
+        }
+        level = if (next.forall(_ == null)) Nil else next.toList
       }
       buf.mkString("\n")
     }
@@ -120,13 +123,4 @@ case object SerializeAndDeserializeBinaryTree
       Solution0.deserialize("[" + s.split('\n').mkString(", ") + "]")
     }
   }
-
-  def main(args: Array[String]): Unit = {
-    val root = TreeNode(1)
-    root.right = TreeNode(3)
-    root.right.right = TreeNode(7)
-    println(Solution0.serialize(root))
-    println(Solution0.deserialize("[1, null, 3, null, null, null, 7]"))
-  }
-
 }
