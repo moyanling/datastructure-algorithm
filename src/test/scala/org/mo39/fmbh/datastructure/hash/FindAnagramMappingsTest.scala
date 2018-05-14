@@ -4,7 +4,7 @@ import org.mo39.fmbh.commons.MoTestSuite
 
 class FindAnagramMappingsTest extends MoTestSuite[FindAnagramMappings] {
 
-  test() { solution =>
+  g() { solution =>
     assert(
       solution
         .anagramMappings(Array(12, 28, 46, 32, 50), Array(50, 12, 32, 46, 28))

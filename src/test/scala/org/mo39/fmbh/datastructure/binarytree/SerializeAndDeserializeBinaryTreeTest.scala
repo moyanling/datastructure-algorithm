@@ -3,8 +3,7 @@ package org.mo39.fmbh.datastructure.binarytree
 import org.mo39.fmbh.commons.MoTestSuite
 import org.mo39.fmbh.commons.classes.TreeNode
 
-class SerializeAndDeserializeBinaryTreeTest
-    extends MoTestSuite[SerializeAndDeserializeBinaryTree] {
+class SerializeAndDeserializeBinaryTreeTest extends MoTestSuite[SerializeAndDeserializeBinaryTree] {
 
   val tree1 = {
     val root = TreeNode(0)
@@ -27,11 +26,24 @@ class SerializeAndDeserializeBinaryTreeTest
 
   val tree3 = null
 
-  test() { solution =>
+  val tree4 = {
+    val root = TreeNode(1)
+    root.left = TreeNode(2)
+    root.right = TreeNode(3)
+    root.left.left = TreeNode(4)
+    root.left.right = TreeNode(5)
+    root
+  }
+
+  g() { solution =>
     assert(solution.deserialize(solution.serialize(tree1)) === tree1)
     assert(solution.deserialize(solution.serialize(tree2)) === tree2)
     assert(solution.deserialize(solution.serialize(tree3)) === tree3)
     assert(solution.deserialize(solution.serialize(tree1)) !== tree2)
+  }
+
+  test("[1, 2, 3, 4, 5]") {
+    assert(SerializeAndDeserializeBinaryTree.Solution0.deserialize("[1, 2, 3, 4, 5]") === tree4)
   }
 
 }

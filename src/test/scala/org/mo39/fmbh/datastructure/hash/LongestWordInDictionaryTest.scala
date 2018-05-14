@@ -4,12 +4,11 @@ import org.mo39.fmbh.commons.MoTestSuite
 
 class LongestWordInDictionaryTest extends MoTestSuite[LongestWordInDictionary] {
 
-  test("apple") { solution =>
-    assert(solution.longestWord(
-      Array("a", "banana", "app", "appl", "ap", "apply", "apple")) === "apple")
+  g("apple") { solution =>
+    assert(solution.longestWord(Array("a", "banana", "app", "appl", "ap", "apply", "apple")) === "apple")
   }
 
-  test("e") { solution =>
+  g("e") { solution =>
     assert(
       solution.longestWord(
         Array("ts",

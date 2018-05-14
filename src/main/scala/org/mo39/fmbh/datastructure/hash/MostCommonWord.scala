@@ -66,14 +66,13 @@ trait MostCommonWord {
 object MostCommonWord extends Enumerable[MostCommonWord] {
   /* Takes the advantage of StringLike.split(Array[Char]) */
   case object Solution extends MostCommonWord {
-    def mostCommonWord(paragraph: String, banned: Array[String]): String = {
+    def mostCommonWord(paragraph: String, banned: Array[String]): String =
       paragraph.toLowerCase
         .split(" !?',;.".toCharArray)
         .filter(s => !s.isEmpty && !banned.to[Set].contains(s))
         .groupBy(identity)
         .maxBy(_._2.length)
         ._1
-    }
   }
 
 }

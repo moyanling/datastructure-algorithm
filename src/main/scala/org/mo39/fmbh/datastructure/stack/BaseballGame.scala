@@ -88,7 +88,7 @@ object BaseballGame extends Enumerable[BaseballGame] {
           case "C" => stack = stack.tail
           case "D" => stack = stack.head * 2 :: stack
           case "+" => stack = stack.take(2).sum :: stack
-          case _ => stack = op.toInt :: stack
+          case _   => stack = op.toInt :: stack
         }
       }
       stack.sum
@@ -106,7 +106,7 @@ object BaseballGame extends Enumerable[BaseballGame] {
           case "C" => stack.remove(0)
           case "D" => stack.head * 2 +=: stack
           case "+" => stack.take(2).sum +=: stack
-          case _ => op.toInt +=: stack
+          case _   => op.toInt +=: stack
         }
       }
       stack.sum

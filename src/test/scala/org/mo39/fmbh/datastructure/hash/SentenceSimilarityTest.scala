@@ -4,22 +4,18 @@ import org.mo39.fmbh.commons.MoTestSuite
 
 class SentenceSimilarityTest extends MoTestSuite[SentenceSimilarity] {
 
-  test("basic") { solution =>
+  g("basic") { solution =>
     assert(
       solution.areSentencesSimilar("great acting skills".split(" "),
                                    "fine drama talent".split(" "),
-                                   Array(Array("great", "fine"),
-                                         Array("acting", "drama"),
-                                         Array("skills", "talent"))))
+                                   Array(Array("great", "fine"), Array("acting", "drama"), Array("skills", "talent"))))
   }
 
-  test("duplicate pair") { solution =>
+  g("duplicate pair") { solution =>
     assert(
       solution.areSentencesSimilar("fine acting skills".split(" "),
                                    "fine acting talent".split(" "),
-                                   Array(Array("skills", "talent"),
-                                         Array("skills", "mo39"),
-                                         Array("skills", "fmbh"))))
+                                   Array(Array("skills", "talent"), Array("skills", "mo39"), Array("skills", "fmbh"))))
   }
 
 }

@@ -30,9 +30,7 @@ sealed trait IntersectionOfTwoArrays {
 
 object IntersectionOfTwoArrays extends Enumerable[IntersectionOfTwoArrays] {
   case object Solution extends IntersectionOfTwoArrays {
-    override def intersection(nums1: Array[Int],
-                              nums2: Array[Int]): Array[Int] = {
+    override def intersection(nums1: Array[Int], nums2: Array[Int]): Array[Int] =
       nums1.toSet.intersect(nums2.toSet).toArray
-    }
   }
 }

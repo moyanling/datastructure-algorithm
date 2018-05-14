@@ -16,8 +16,8 @@ trait Enumerable[T] {
     * return a list of solution instances that implements the trait using reflection.
     */
   def values: List[T] = {
-    val s = this.getClass.getName
-    val prefix = s.substring(0, s.length - 1)
+    val s              = this.getClass.getName
+    val prefix         = s.substring(0, s.length - 1)
     val singleSolution = s"$prefix.Solution".toObject
     val list =
       if (singleSolution.isSuccess) List(singleSolution)

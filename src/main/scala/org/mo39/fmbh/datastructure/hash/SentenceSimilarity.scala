@@ -41,9 +41,7 @@ import org.mo39.fmbh.commons.utils.Enumerable
   */
 @ProblemSource(LeetCode)
 sealed trait SentenceSimilarity {
-  def areSentencesSimilar(words1: Array[String],
-                          words2: Array[String],
-                          pairs: Array[Array[String]]): Boolean
+  def areSentencesSimilar(words1: Array[String], words2: Array[String], pairs: Array[Array[String]]): Boolean
 }
 
 object SentenceSimilarity extends Enumerable[SentenceSimilarity] {

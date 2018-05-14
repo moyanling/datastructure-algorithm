@@ -45,12 +45,11 @@ object NumberComplement extends Enumerable[NumberComplement] {
 
   /* Parse the binary string with a radix */
   case object Solution0 extends NumberComplement {
-    def findComplement(num: Int): Int = {
+    def findComplement(num: Int): Int =
       Integer.parseInt(
         num.toBinaryString.map(i => if (i == '1') '0' else '1'),
         2
       )
-    }
   }
 
   case object Solution1 extends NumberComplement {

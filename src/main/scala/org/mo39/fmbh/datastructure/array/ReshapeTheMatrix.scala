@@ -19,9 +19,7 @@ object ReshapeTheMatrix {
 
   }
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit =
     Z.print(SOLUTION.matrixReshape(Array.ofDim[Int](1, 5), 5, 1))
-  }
-
 
 }

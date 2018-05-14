@@ -1,6 +1,6 @@
 package org.mo39.fmbh.datastructure.array
 
-import org.mo39.fmbh.commons.utils.S.partition
+import org.mo39.fmbh.commons.utils.Z
 
 object MoveZeroes {
 
@@ -9,9 +9,8 @@ object MoveZeroes {
   }
 
   case object SOLUTION extends MoveZeros {
-    override def moveZeroes(nums: Array[Int]): Unit = {
-      partition(nums, _ != 0)
-    }
+    override def moveZeroes(nums: Array[Int]): Unit =
+      Z.partition(nums, _ != 0)
   }
 
   def main(args: Array[String]): Unit = {

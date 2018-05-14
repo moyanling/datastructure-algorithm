@@ -46,8 +46,7 @@ sealed trait LargestNumberAtLeastTwiceOfOthers {
   def dominantIndex(nums: Array[Int]): Int
 }
 
-object LargestNumberAtLeastTwiceOfOthers
-    extends Enumerable[LargestNumberAtLeastTwiceOfOthers] {
+object LargestNumberAtLeastTwiceOfOthers extends Enumerable[LargestNumberAtLeastTwiceOfOthers] {
   case object Solution extends LargestNumberAtLeastTwiceOfOthers {
     def dominantIndex(nums: Array[Int]): Int = {
       val max = nums.max

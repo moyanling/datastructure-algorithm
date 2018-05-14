@@ -46,7 +46,7 @@ object RotatedDigits extends Enumerable[RotatedDigits] {
   case object Solution extends RotatedDigits {
     override def rotatedDigits(N: Int): Int = {
       val isInvalid = Set(3, 4, 7)
-      val mustHave = Set(2, 5, 6, 9)
+      val mustHave  = Set(2, 5, 6, 9)
       val isGood = (n: Int) => {
         val arr = n.toString.map(_.asDigit)
         !arr.exists(isInvalid) && arr.exists(mustHave)

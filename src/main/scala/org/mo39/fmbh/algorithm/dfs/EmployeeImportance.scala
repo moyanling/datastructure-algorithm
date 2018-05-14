@@ -56,9 +56,8 @@ object EmployeeImportance extends Enumerable[EmployeeImportance] {
       dfs(map, Seq(map(id)))
     }
 
-    def dfs(map: Map[Int, Employee], seq: Seq[Employee]): Int = {
+    def dfs(map: Map[Int, Employee], seq: Seq[Employee]): Int =
       seq.foldLeft(0)(_ + _.importance) + dfs(map, seq.map(e => map(e.id)))
-    }
   }
 
 }

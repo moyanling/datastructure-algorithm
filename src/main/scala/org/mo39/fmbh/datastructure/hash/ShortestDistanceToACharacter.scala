@@ -34,8 +34,7 @@ sealed trait ShortestDistanceToACharacter {
   def shortestToChar(S: String, C: Char): Array[Int]
 }
 
-object ShortestDistanceToACharacter
-    extends Enumerable[ShortestDistanceToACharacter] {
+object ShortestDistanceToACharacter extends Enumerable[ShortestDistanceToACharacter] {
   case object Solution extends ShortestDistanceToACharacter {
     override def shortestToChar(S: String, C: Char): Array[Int] = {
       val seq = S.indices.filter(S(_) == C)

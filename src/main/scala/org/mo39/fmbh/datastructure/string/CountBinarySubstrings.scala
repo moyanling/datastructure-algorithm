@@ -1,6 +1,6 @@
 package org.mo39.fmbh.datastructure.string
 
-import org.mo39.fmbh.commons.annotations.{ProblemSource, TLE}
+import org.mo39.fmbh.commons.annotations.{ ProblemSource, TLE }
 import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
 import org.mo39.fmbh.commons.utils.Enumerable
 
@@ -54,7 +54,7 @@ object CountBinarySubstrings extends Enumerable[CountBinarySubstrings] {
   @TLE
   case object Solution0 extends CountBinarySubstrings {
     override def countBinarySubstrings(s: String): Int = {
-      var count = 0
+      var count    = 0
       val markDone = Array.fill(s.length)(false)
       for (len <- 2 to s.length by 2; i <- s.indices
            if i + len <= s.length && !markDone(i)) {

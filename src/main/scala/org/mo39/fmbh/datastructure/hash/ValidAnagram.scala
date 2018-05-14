@@ -15,8 +15,7 @@ object ValidAnagram {
     }
   }
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit =
     println(SOLUTION.isAnagram("anagram", "nagaram"))
-  }
 
 }

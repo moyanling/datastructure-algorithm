@@ -15,7 +15,6 @@ object JudgeRouteCircle {
     x == 0 && y == 0
   }
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit =
     println(judgeCircle("LLRRUD"))
-  }
 }

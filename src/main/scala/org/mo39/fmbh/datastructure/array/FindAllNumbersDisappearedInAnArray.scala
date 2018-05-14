@@ -34,13 +34,12 @@ sealed trait FindAllNumbersDisappearedInAnArray {
   def findDisappearedNumbers(nums: Array[Int]): List[Int]
 }
 
-object FindAllNumbersDisappearedInAnArray
-    extends Enumerable[FindAllNumbersDisappearedInAnArray] {
+object FindAllNumbersDisappearedInAnArray extends Enumerable[FindAllNumbersDisappearedInAnArray] {
 
   case object Solution0 extends FindAllNumbersDisappearedInAnArray {
     override def findDisappearedNumbers(nums: Array[Int]): List[Int] = {
       val result = mutable.ListBuffer[Int]()
-      val len = nums.length + 1
+      val len    = nums.length + 1
       for (i <- nums.indices) {
         val v = nums(i) % len - 1
         nums(v) = nums(v) % len + len

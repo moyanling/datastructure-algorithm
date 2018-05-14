@@ -10,7 +10,7 @@ object TwoSumIvInputIsABst {
   /** This can be applied to BinaryTree not only BST. */
   def findTarget(root: TreeNode, k: Int): Boolean = {
     if (root == null) return false
-    val set = mutable.Set[Int]()
+    val set   = mutable.Set[Int]()
     val stack = mutable.Stack[TreeNode]()
     stack.push(root)
     while (stack.nonEmpty) {
@@ -22,6 +22,5 @@ object TwoSumIvInputIsABst {
     }
     false
   }
-
 
 }

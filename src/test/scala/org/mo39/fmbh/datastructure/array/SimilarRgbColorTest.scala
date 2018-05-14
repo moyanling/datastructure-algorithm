@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 
 class SimilarRgbColorTest extends MoTestSuite[SimilarRgbColor] {
 
-  test("#09f166") { solution =>
+  g("#09f166") { solution =>
     assert(solution.similarRGB("#09f166") === "#11ee66")
   }
 

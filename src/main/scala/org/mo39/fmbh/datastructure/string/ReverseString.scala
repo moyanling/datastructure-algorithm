@@ -19,7 +19,6 @@ object ReverseString extends Enumeration {
     String.valueOf(arr)
   })
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit =
     for (v <- ReverseString.values) println(v.reverseString("hello, world."))
-  }
 }

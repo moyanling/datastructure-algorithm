@@ -32,14 +32,14 @@ object LeetDoc extends App with LazyLogging {
     * 1. Comment ending should not lies before the annotation
     * 2. The annotation must be followed by a sealed trait
     */
-  val regex = s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\).*"
+  val regex = s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\)sealed trait.*"
 
   /* Given a problem name, generate the LeetCode link */
   def linkOf(name: String): String = {
     val linkName = name match {
       case "OneBitAndTwoBitCharacters" => "1-bit-and-2-bit-characters"
       case _ =>
-        val charArr = name.toCharArray
+        val charArr  = name.toCharArray
         val charList = new StringBuilder()
         for (i <- charArr.indices) {
           if (i != 0 && charArr(i).isUpper
@@ -74,7 +74,7 @@ object LeetDoc extends App with LazyLogging {
 
   /* Format the LeetDoc */
   private def format(str: String) = {
-    val content = str.split('\n').map(s => s"  * $s").toList
+    val content = str.split('\n').map(s => s" * $s").toList
     ("\n/**" :: content ::: " */" :: Nil).mkString("\n")
   }
 

@@ -12,7 +12,7 @@ import org.mo39.fmbh.commons.utils.Z._
   */
 abstract class MoTestSuite[T] extends FunSuite {
 
-  def test(testName: String = "")(testCase: T => Any): Unit = {
+  def g(testName: String = "")(testCase: T => Any): Unit = {
     /* Get the companion object of the trait T using some naming convention trick */
     val obj = getClass.getName.stripSuffix("Test").toObject[T]
     require(obj.isSuccess, getClass.getName.stripSuffix("Test"))

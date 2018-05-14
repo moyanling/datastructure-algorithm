@@ -35,9 +35,9 @@ object SumOfTwoIntegers extends Enumerable[SumOfTwoIntegers] {
   case object Solution0 extends SumOfTwoIntegers {
     override def getSum(a: Int, b: Int): Int = {
       var Array(carry, i) = Array(0, 0)
-      val A = a.toBinaryString.map(_.asDigit)
-      val B = b.toBinaryString.map(_.asDigit)
-      val arr = ListBuffer[Int]()
+      val A               = a.toBinaryString.map(_.asDigit)
+      val B               = b.toBinaryString.map(_.asDigit)
+      val arr             = ListBuffer[Int]()
       while (i < A.length || i < B.length || carry != 0) {
         val iA = if (i < A.length) A(A.length - i - 1) else 0
         val iB = if (i < B.length) B(B.length - i - 1) else 0

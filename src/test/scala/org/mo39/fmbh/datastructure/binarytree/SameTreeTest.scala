@@ -29,11 +29,11 @@ class SameTreeTest extends MoTestSuite[SameTree] {
 
   val tree4 = null
 
-  test("sanity") { solution =>
+  g("sanity") { solution =>
     assert(solution.isSameTree(tree1, tree2) === true)
   }
 
-  test("regression") { solution =>
+  g("regression") { solution =>
     assert(solution.isSameTree(tree1, tree3) === false)
     assert(solution.isSameTree(tree4, tree1) === false)
   }

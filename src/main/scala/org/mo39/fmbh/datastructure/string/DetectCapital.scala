@@ -7,15 +7,13 @@ object DetectCapital {
   }
 
   case object SOLUTION_0 extends DetectCapital {
-    override def detectCapitalUse(word: String): Boolean = {
+    override def detectCapitalUse(word: String): Boolean =
       Array(word.toLowerCase.capitalize, word.toLowerCase, word.toUpperCase) contains word
-    }
   }
 
   case object SOLUTION_1 extends DetectCapital {
-    override def detectCapitalUse(word: String): Boolean = {
+    override def detectCapitalUse(word: String): Boolean =
       word.matches("[A-Z]+|[a-z]+|[A-Z][a-z]+")
-    }
   }
 
   case object SOLUTION_2 extends DetectCapital {

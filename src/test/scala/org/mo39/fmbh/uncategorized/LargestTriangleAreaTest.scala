@@ -6,18 +6,14 @@ import org.scalactic.Tolerance._
 
 class LargestTriangleAreaTest extends MoTestSuite[LargestTriangleArea] {
 
-  test("basic") { solution =>
+  g("basic") { solution =>
     assert(
       solution
-        .largestTriangleArea(
-          Array(Array(0, 0),
-                Array(0, 1),
-                Array(1, 0),
-                Array(0, 2),
-                Array(2, 0))) === 2.0 +- math.pow(10, -6))
+        .largestTriangleArea(Array(Array(0, 0), Array(0, 1), Array(1, 0), Array(0, 2), Array(2, 0))) === 2.0 +- math
+        .pow(10, -6))
   }
 
-  test("complex") { solution =>
+  g("complex") { solution =>
     assert(
       solution.largestTriangleArea(
         Array(Array(-35, 19),
@@ -32,7 +28,7 @@ class LargestTriangleAreaTest extends MoTestSuite[LargestTriangleArea] {
               Array(11, 37))) === 1799.0 +- math.pow(10, -6))
   }
 
-  test("really complex one") { solution =>
+  g("really complex one") { solution =>
     assert(
       solution.largestTriangleArea(Array(
         Array(35, -23),

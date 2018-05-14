@@ -61,7 +61,7 @@ object PositionsOfLargeGroups extends Enumerable[PositionsOfLargeGroups] {
   case object Solution extends PositionsOfLargeGroups {
     override def largeGroupPositions(S: String): List[List[Int]] = {
       val buf = ListBuffer[List[Int]]()
-      var i = 0
+      var i   = 0
       for (j <- 0 to S.length if j == S.length || S(i) != S(j)) {
         if (j - i > 2) buf += List(i, j - 1)
         i = j

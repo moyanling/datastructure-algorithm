@@ -28,11 +28,11 @@ case class Problem(file: File) {
 
   /* Gives the git repository reference */
   val gitRepoReference: String =
-    "../master/" +
-      ProjectRoot
-        .relativize(file.toPath)
-        .toString
-        .replace(File.separator, "/")
+  "../master/" +
+  ProjectRoot
+    .relativize(file.toPath)
+    .toString
+    .replace(File.separator, "/")
 
   override def toString: String = name
 

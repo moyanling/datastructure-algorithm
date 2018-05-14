@@ -14,8 +14,7 @@ object ConstructTheRectangle {
     }
   }
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit =
     SOLUTION.constructRectangle(1)
-  }
 
 }

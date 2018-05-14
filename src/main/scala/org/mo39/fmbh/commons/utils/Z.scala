@@ -16,9 +16,8 @@ import scala.util.Try
 object Z {
 
   // --------- Matrix Printers --------------
-  def print[T](matrix: Array[Array[T]]): Unit = {
+  def print[T](matrix: Array[Array[T]]): Unit =
     println(matrix.map(_.mkString(", ")).mkString("\n"))
-  }
 
   // ----------------------------------------
   // ------------ Swappers ------------------
@@ -44,9 +43,18 @@ object Z {
     arr(i) = arr(i) ^ arr(j)
   }
 
-  def isValid(arr: Array[Array[Int]], i: Int, j: Int): Boolean = {
-    i >= 0 && j >= 0 && i < arr.length && j < arr(i).length
+  def partition(nums: Array[Int], p: Int => Boolean): Int = {
+    var j = 0
+    for (i <- nums.indices) {
+      if (p(nums(i))) {
+        swap(nums, i, j)
+        j += 1
+      }
+    }
+    j
   }
+
+  def isValid(arr: Array[Array[Int]], i: Int, j: Int): Boolean = i >= 0 && j >= 0 && i < arr.length && j < arr(i).length
 
   private val clipBoard = Toolkit.getDefaultToolkit.getSystemClipboard
 
@@ -74,7 +82,7 @@ object Z {
     def limitWidthTo(width: Int): Array[String] = {
       require(!str.contains("\n"))
       val charArr = str.toCharArray
-      var i = 0
+      var i       = 0
       for (j <- str.indices) {
         if (j - i > width) {
           /* Find the last space character before the width limit */
@@ -96,12 +104,11 @@ object Z {
       *
       * @tparam T the type of the class or trait of the companion Object
       */
-    def toObject[T]: Try[T] = {
+    def toObject[T]: Try[T] =
       Try {
         val module = runtimeMirror.staticModule(str)
         runtimeMirror.reflectModule(module).instance.asInstanceOf[T]
       }
-    }
 
     /**
       * String to Instance
@@ -109,6 +116,7 @@ object Z {
       *
       * @tparam T the type of the expected instance
       */
+    @deprecated("Nice practice for TypeTag. Not convenient to use though.")
     def as[T: TypeTag]: T = {
       val t = typeOf[T]
       t match {

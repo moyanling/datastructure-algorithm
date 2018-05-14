@@ -1,7 +1,7 @@
 package org.mo39.fmbh.datastructure.design
 
 import scala.collection.IndexedSeqLike
-import scala.collection.mutable.{ArrayBuffer, Builder}
+import scala.collection.mutable.{ ArrayBuffer, Builder }
 
 object RNA {
 
@@ -15,11 +15,10 @@ object RNA {
   object Base {
     // Int to Base signature matches Array[Base].apply method reference and ".apply" can be hidden
     val fromInt: Int => Base = Array(A, T, G, U)
-    val toInt: Base => Int = Map(A -> 0, T -> 1, G -> 2, U -> 3)
+    val toInt: Base => Int   = Map(A -> 0, T -> 1, G -> 2, U -> 3)
   }
 
-  final class RNA1 private (val groups: Array[Int], val length: Int)
-      extends IndexedSeq[Base] {
+  final class RNA1 private (val groups: Array[Int], val length: Int) extends IndexedSeq[Base] {
 
     import RNA1._
 

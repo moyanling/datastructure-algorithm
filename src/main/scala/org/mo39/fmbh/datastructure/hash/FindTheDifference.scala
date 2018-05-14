@@ -9,7 +9,7 @@ object FindTheDifference {
   object SOLUTION extends FindTheDifference {
 
     override def findTheDifference(s: String, t: String): Char = {
-      val arr = Array.fill(26) {0}
+      val arr = Array.fill(26) { 0 }
       for (c <- t) arr(c - 'a') += 1
       for (c <- s) arr(c - 'a') -= 1
       (0 to 25).foreach(i => if (arr(i) > 0) return (i + 'a').toChar)
@@ -18,8 +18,7 @@ object FindTheDifference {
 
   }
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit =
     println(SOLUTION.findTheDifference("abc", "abcd"))
-  }
 
 }

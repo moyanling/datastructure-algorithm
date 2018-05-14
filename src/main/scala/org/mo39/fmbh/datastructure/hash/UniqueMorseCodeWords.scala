@@ -31,8 +31,7 @@ object UniqueMorseCodeWords {
     ('z', "--..")
   )
 
-  def uniqueMorseRepresentations(words: Array[String]): Int = {
+  def uniqueMorseRepresentations(words: Array[String]): Int =
     words.map(word => word.toCharArray.map(morseList.get).mkString("")).toSet.size
-  }
 
 }

@@ -62,16 +62,7 @@ object IpToCidr extends Enumerable[IpToCidr] {
 
   case object Solution extends IpToCidr {
 
-    val map = Map(0 -> 1,
-               1 -> 2,
-               2 -> 4,
-               3 -> 8,
-               4 -> 16,
-               5 -> 32,
-               6 -> 64,
-               7 -> 128,
-               8 -> 256,
-               9 -> 512)
+    val map = Map(0 -> 1, 1 -> 2, 2 -> 4, 3 -> 8, 4 -> 16, 5 -> 32, 6 -> 64, 7 -> 128, 8 -> 256, 9 -> 512)
 
     override def ipToCIDR(ip: String, n: Int): List[String] = ???
   }

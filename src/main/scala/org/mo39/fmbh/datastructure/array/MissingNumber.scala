@@ -7,9 +7,8 @@ object MissingNumber {
   }
 
   case object SOLUTION extends MissingNumber {
-    override def missingNUmber(nums: Array[Int]): Int = {
+    override def missingNUmber(nums: Array[Int]): Int =
       (0 + nums.length) * (nums.length + 1) / 2 - nums.sum
-    }
   }
 
 }

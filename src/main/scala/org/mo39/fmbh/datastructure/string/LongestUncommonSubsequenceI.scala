@@ -7,9 +7,8 @@ object LongestUncommonSubsequenceI {
   }
 
   case object Solution extends LongestUncommonSubsequenceI {
-    override def findLUSlength(a: String, b: String): Int = {
+    override def findLUSlength(a: String, b: String): Int =
       if (a == b) -1 else math.max(a.length, b.length)
-    }
   }
 
 }

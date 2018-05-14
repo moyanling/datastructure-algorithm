@@ -47,25 +47,23 @@ sealed trait SimilarRgbColor {
 
 object SimilarRgbColor extends Enumerable[SimilarRgbColor] {
   case object Solution extends SimilarRgbColor {
-    val arr = Array(0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99,
-      0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff)
+    val arr = Array(0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff)
     val closest = (s: String) => {
       require(s.length == 2)
       if (s.head == s.last) s.head.toString * 2
       else {
         val v = Integer.parseInt(s, 16)
         // No need to check boundary because v cannot be larger than 0xff
-        val i = arr.indices.find(i => arr(i) < v && arr(i + 1) > v).get
+        val i   = arr.indices.find(i => arr(i) < v && arr(i + 1) > v).get
         val num = if (v - arr(i) > arr(i + 1) - v) i + 1 else i
         num.toHexString * 2
       }
     }: String
-    override def similarRGB(color: String): String = {
+    override def similarRGB(color: String): String =
       "#" + color
         .substring(1)
         .grouped(2)
         .map(closest)
         .mkString
-    }
   }
 }

@@ -65,11 +65,9 @@ sealed trait FindSmallestLetterGreaterThanTarget {
   def nextGreatestLetter(letters: Array[Char], target: Char): Char
 }
 
-object FindSmallestLetterGreaterThanTarget
-    extends Enumerable[FindSmallestLetterGreaterThanTarget] {
+object FindSmallestLetterGreaterThanTarget extends Enumerable[FindSmallestLetterGreaterThanTarget] {
   case object Solution extends FindSmallestLetterGreaterThanTarget {
-    override def nextGreatestLetter(letters: Array[Char],
-                                    target: Char): Char = {
+    override def nextGreatestLetter(letters: Array[Char], target: Char): Char = {
       val arr = letters.filter(_ > target)
       if (arr.length > 0) arr.min else letters.min
     }

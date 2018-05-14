@@ -39,7 +39,7 @@ object ConstructStringFromBinaryTree {
   case object SOLUTION_1 extends ConstructStringFromBinaryTree {
     override def tree2str(t: TreeNode): String = {
       if (t == null) return ""
-      val s = t.value.toString
+      val s             = t.value.toString
       val (left, right) = (tree2str(t.left), tree2str(t.right))
       if (left == "" && right == "") s
       else if (left == "" && right != "") s + "()" + '(' + right + ')'

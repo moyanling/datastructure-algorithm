@@ -19,8 +19,7 @@ object ShortestWordDistance {
     }
   }
 
-  def main(args: Array[String]): Unit = {
-    SOLUTION.shortestDistance(Array("a","b","c","d","d"), "a", "d")
-  }
+  def main(args: Array[String]): Unit =
+    SOLUTION.shortestDistance(Array("a", "b", "c", "d", "d"), "a", "d")
 
 }

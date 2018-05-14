@@ -5,7 +5,7 @@ import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
 import org.mo39.fmbh.commons.classes.TreeNode
 import org.mo39.fmbh.commons.utils.Enumerable
 
-import scala.collection.mutable.{ArrayBuffer, ListBuffer}
+import scala.collection.mutable.{ ArrayBuffer, ListBuffer }
 
 /**
   * {{{
@@ -54,40 +54,15 @@ sealed trait SerializeAndDeserializeBinaryTree {
   def deserialize(s: String): TreeNode
 }
 
-case object SerializeAndDeserializeBinaryTree
-    extends Enumerable[SerializeAndDeserializeBinaryTree] {
-
-  /* It follows the LeetCode serialize format */
-  case object Solution0 extends SerializeAndDeserializeBinaryTree {
-    override def serialize(treeNode: TreeNode): String = {
-      if (treeNode == null) return "[]"
-      var level = List[TreeNode](treeNode)
-      var list = ListBuffer[String]()
-      while (level.nonEmpty) {
-        list ++= level.map(n => if (n != null) n.value.toString else "null")
-        val nextLevel = level
-          .flatMap(n =>
-            if (n != null) List(n.left, n.right) else List(null, null))
-        level = if (nextLevel.exists(_ != null)) nextLevel else Nil
-      }
-      list = list.dropRight(list.length - list.lastIndexWhere(_ != null) - 1)
-      "[" + list.mkString(",") + "]"
-    }
-
-    override def deserialize(s: String): TreeNode = {
-      require(s != null)
-      if (s == "[]") return null
-      SerializeAndDeserializeBinaryTree.deserialize(s, "null")
-    }
-  }
+case object SerializeAndDeserializeBinaryTree extends Enumerable[SerializeAndDeserializeBinaryTree] {
 
   private def deserialize(s: String, nullPresentation: String) = {
     val arr = s.stripPrefix("[").stripSuffix("]").split(",").map(_.trim)
     val mkNode = (i: Int) => {
-      if (arr(i) == nullPresentation) null
+      if (i >= arr.length || arr(i) == nullPresentation) null
       else TreeNode(arr(i).toInt)
     }
-    val root = mkNode(0)
+    val root       = mkNode(0)
     var (i, level) = (0, List(root))
     while (level.nonEmpty) {
       var nextLevel = ListBuffer[TreeNode]()
@@ -102,6 +77,29 @@ case object SerializeAndDeserializeBinaryTree
       level = if (i >= arr.length - 1) Nil else nextLevel.toList
     }
     root
+  }
+
+  /* It follows the LeetCode serialize format */
+  case object Solution0 extends SerializeAndDeserializeBinaryTree {
+    override def serialize(treeNode: TreeNode): String = {
+      if (treeNode == null) return "[]"
+      var level = List[TreeNode](treeNode)
+      var list  = ListBuffer[String]()
+      while (level.nonEmpty) {
+        list ++= level.map(n => if (n != null) n.value.toString else "null")
+        val nextLevel = level
+          .flatMap(n => if (n != null) List(n.left, n.right) else List(null, null))
+        level = if (nextLevel.exists(_ != null)) nextLevel else Nil
+      }
+      list = list.dropRight(list.length - list.lastIndexWhere(_ != null) - 1)
+      "[" + list.mkString(",") + "]"
+    }
+
+    override def deserialize(s: String): TreeNode = {
+      require(s != null)
+      if (s == "[]") return null
+      SerializeAndDeserializeBinaryTree.deserialize(s, "null")
+    }
   }
 
   case object Solution1 extends SerializeAndDeserializeBinaryTree {
@@ -125,9 +123,8 @@ case object SerializeAndDeserializeBinaryTree
     override def deserialize(s: String): TreeNode = {
       require(s != null && s.contains('\n') || s == "null")
       if (s == "null") return null
-      SerializeAndDeserializeBinaryTree.deserialize(
-        "[" + s.split('\n').mkString(", ") + "]",
-        "#")
+      SerializeAndDeserializeBinaryTree.deserialize("[" + s.split('\n').mkString(", ") + "]", "#")
     }
   }
+
 }

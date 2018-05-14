@@ -5,10 +5,8 @@ import org.mo39.fmbh.commons.classes.Interval
 
 class MeetingRoomsTest extends MoTestSuite[MeetingRooms] {
 
-  test() { solution =>
-    assert(
-      solution.canAttendMeetings(
-        Array(Interval(0, 30), Interval(5, 10), Interval(15, 20))) === false)
+  g() { solution =>
+    assert(solution.canAttendMeetings(Array(Interval(0, 30), Interval(5, 10), Interval(15, 20))) === false)
   }
 
 }

@@ -5,11 +5,10 @@ import org.mo39.fmbh.commons.classes.TreeNode
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
 
-
 object ConvertBstToGreaterTree {
   def convertBST(root: TreeNode): TreeNode = {
     val list = ListBuffer[TreeNode]()
-    var pre = 0
+    var pre  = 0
     dfs(root, list)
     list.foreach(node => {
       node.value += pre

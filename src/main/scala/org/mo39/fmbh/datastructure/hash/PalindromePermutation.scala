@@ -7,13 +7,11 @@ object PalindromePermutation {
   }
 
   case object SOLUTION extends PalindromePermutation {
-    override def canPermutePalindrome(s: String): Boolean = {
+    override def canPermutePalindrome(s: String): Boolean =
       if (s.groupBy(identity).mapValues(_.length).count(_._2 % 2 == 1) > 1) true else false
-    }
   }
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit =
     println(SOLUTION.canPermutePalindrome("aab"))
-  }
 
 }

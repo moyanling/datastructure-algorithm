@@ -53,11 +53,10 @@ sealed trait ExcelSheetColumnNumber {
 
 object ExcelSheetColumnNumber extends Enumerable[ExcelSheetColumnNumber] {
   case object Solution0 extends ExcelSheetColumnNumber {
-    override def titleToNumber(s: String): Int = {
+    override def titleToNumber(s: String): Int =
       s.indices
         .map(i => math.pow(26, s.length - i - 1).toInt * (s(i) - '@'))
         .sum
-    }
   }
 
   /* This one brings a different perspective with a clean code */

@@ -1,6 +1,5 @@
 package org.mo39.fmbh.datastructure.hash
 
-
 object TwoSum {
 
   def twoSum(nums: Array[Int], target: Int): Array[Int] = {

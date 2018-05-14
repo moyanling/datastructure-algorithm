@@ -7,9 +7,8 @@ object DistributeCandies {
   }
 
   case object SOLUTION extends DistributeCandies {
-    override def distributeCandies(candies: Array[Int]): Int = {
+    override def distributeCandies(candies: Array[Int]): Int =
       math.min(candies.groupBy(identity).mapValues(_.length).size, candies.length / 2)
-    }
   }
 
 }

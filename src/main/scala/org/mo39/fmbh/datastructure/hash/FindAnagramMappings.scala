@@ -39,8 +39,7 @@ object FindAnagramMappings extends Enumerable[FindAnagramMappings] {
    * we can use index to make it more concise
    */
   case object Solution extends FindAnagramMappings {
-    def anagramMappings(A: Array[Int], B: Array[Int]): Array[Int] = {
+    def anagramMappings(A: Array[Int], B: Array[Int]): Array[Int] =
       A.map(B.indexOf)
-    }
   }
 }

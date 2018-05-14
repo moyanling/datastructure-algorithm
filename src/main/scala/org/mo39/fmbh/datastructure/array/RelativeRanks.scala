@@ -22,8 +22,7 @@ object RelativeRanks {
     }
   }
 
-  def main(args: Array[String]): Unit = {
-     SOLUTION.findRelativeRanks(Array(10,3,8,9,4))
-  }
+  def main(args: Array[String]): Unit =
+    SOLUTION.findRelativeRanks(Array(10, 3, 8, 9, 4))
 
 }
