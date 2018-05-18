@@ -1,7 +1,7 @@
 package org.mo39.fmbh.datastructure.stack
 
 import org.mo39.fmbh.commons.annotations.ProblemSource
-import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
+import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
 import org.mo39.fmbh.commons.utils.Enumerable
 
 import scala.collection.mutable.ListBuffer

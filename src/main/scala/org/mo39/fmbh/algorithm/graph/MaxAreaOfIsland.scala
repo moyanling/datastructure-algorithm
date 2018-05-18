@@ -1,7 +1,7 @@
 package org.mo39.fmbh.algorithm.graph
 
 import org.mo39.fmbh.commons.annotations.ProblemSource
-import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
+import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
 import org.mo39.fmbh.commons.utils.Enumerable
 import org.mo39.fmbh.commons.utils.Z._
 

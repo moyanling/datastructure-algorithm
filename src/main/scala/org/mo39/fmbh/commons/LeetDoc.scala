@@ -3,7 +3,7 @@ package org.mo39.fmbh.commons
 import com.typesafe.scalalogging.LazyLogging
 import org.jsoup.Jsoup
 import org.mo39.fmbh.commons.Const._
-import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
+import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
 import org.mo39.fmbh.commons.utils.Z.toStrWrapper
 
 import scala.util.Try
@@ -14,7 +14,7 @@ import org.apache.commons.text.StringEscapeUtils.unescapeHtml4
   *
   * The pre-requisite are:
   * 1. Trait
-  * 2. Marked with [[org.mo39.fmbh.commons.annotations.SourceValue.LeetCode]]
+  * 2. Marked with [[org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode]]
   * 3. Only one trait matches above items and does not yet have a comment
   */
 object LeetDoc extends App with LazyLogging {

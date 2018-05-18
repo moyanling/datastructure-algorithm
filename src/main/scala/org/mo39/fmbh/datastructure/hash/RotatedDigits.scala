@@ -1,6 +1,6 @@
 package org.mo39.fmbh.datastructure.hash
 import org.mo39.fmbh.commons.annotations.ProblemSource
-import org.mo39.fmbh.commons.annotations.SourceValue.LeetCode
+import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
 import org.mo39.fmbh.commons.utils.Enumerable
 
 /**
