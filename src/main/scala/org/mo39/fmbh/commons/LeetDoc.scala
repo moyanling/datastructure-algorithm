@@ -19,7 +19,7 @@ import org.apache.commons.text.StringEscapeUtils.unescapeHtml4
   */
 object LeetDoc extends App with LazyLogging {
 
-  val template =
+  val scalaTemplate =
     s"""{{{
      |%s
      |}}}
@@ -27,12 +27,21 @@ object LeetDoc extends App with LazyLogging {
      |@see [[%s %s]]
      |@author mo39.fmbh""".stripMargin
 
+  val javaTemplate =
+    s"""<pre>
+       |{@code
+       |%s
+       |}
+       |
+       |@see <a href=%s>%s</a>
+       |@author mo39.fmbh""".stripMargin
+
   /**
     * Some requirements are:
     * 1. Comment ending should not lies before the annotation
-    * 2. The annotation must be followed by a sealed trait
+    * 2. The annotation must be followed by a sealed trait for Scala or a public enum for Java
     */
-  val regex = s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\)sealed trait.*"
+  val regex = s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\)((sealed trait)|(public enum)).*"
 
   /* Given a problem name, generate the LeetCode link */
   def linkOf(name: String): String = {
@@ -91,7 +100,9 @@ object LeetDoc extends App with LazyLogging {
     val desc = fetchDesc(link)
     if (desc != "") logger.info("Success.")
     else logger.info("╮(╯_╰)╭")
-    val leetDoc = template.format(desc, link, name)
+    val leetDoc =
+      if (list.head.isScala) scalaTemplate.format(desc, link, name)
+      else javaTemplate.format(desc, link, name)
     logger.info("Copying the LeetDoc to the clipboard.")
     format(leetDoc).toClipboard
   }
