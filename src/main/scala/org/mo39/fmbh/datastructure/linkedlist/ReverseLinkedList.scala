@@ -65,14 +65,15 @@ object ReverseLinkedList extends Enumerable[ReverseLinkedList] {
 
   case object Solution2 extends ReverseLinkedList {
     override def reverseList(head: ListNode): ListNode = {
-      var (cur, pre) = (head, null.asInstanceOf[ListNode])
+      var pre: Option[ListNode] = None
+      var cur                   = head
       while (cur != null) {
         val temp = cur.next
-        cur.next = pre
-        pre = cur
+        cur.next = pre.orNull
+        pre = Some(cur)
         cur = temp
       }
-      pre
+      pre.orNull
     }
   }
 

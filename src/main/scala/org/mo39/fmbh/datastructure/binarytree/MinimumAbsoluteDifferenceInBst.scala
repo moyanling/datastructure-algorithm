@@ -76,16 +76,17 @@ object MinimumAbsoluteDifferenceInBst extends Enumerable[MinimumAbsoluteDifferen
 
   case object Solution2 extends MinimumAbsoluteDifferenceInBst {
     override def getMinimumDifference(root: TreeNode): Int = {
-      var stack           = ListBuffer[TreeNode]()
-      var (cur, pre, min) = (root, null.asInstanceOf[TreeNode], Int.MaxValue)
+      var stack                 = ListBuffer[TreeNode]()
+      var pre: Option[TreeNode] = None
+      var (cur, min)            = (root, Int.MaxValue)
       while (cur != null || stack.nonEmpty) {
         while (cur != null) {
           cur +=: stack
           cur = cur.left
         }
         cur = stack.head
-        if (pre != null) min = math.min(min, cur.value - pre.value)
-        pre = cur
+        if (pre.isDefined) min = math.min(min, cur.value - pre.get.value)
+        pre = Some(cur)
         stack = stack.tail
         cur = cur.right
       }

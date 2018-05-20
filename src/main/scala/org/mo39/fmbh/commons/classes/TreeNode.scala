@@ -11,7 +11,7 @@ case class TreeNode(private var _value: Int) {
   var left: TreeNode  = _
   var right: TreeNode = _
 
-  override def toString: String = Solution1.serialize(this)
+  override def toString: String = s"\n${Solution1.serialize(this)}\n"
 
   override def equals(obj: scala.Any): Boolean =
     if (!obj.isInstanceOf[TreeNode]) false

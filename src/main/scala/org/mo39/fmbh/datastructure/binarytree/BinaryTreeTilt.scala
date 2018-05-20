@@ -51,15 +51,15 @@ object BinaryTreeTilt extends Enumerable[BinaryTreeTilt] {
   case object Solution0 extends BinaryTreeTilt {
     override def findTilt(root: TreeNode): Int = {
       /* The first return value is the sum of the tilt, the second one is sum */
-      def postOrder(root: TreeNode): (Int, Int) =
+      def postorder(root: TreeNode): (Int, Int) =
         root match {
           case null => (0, 0)
           case _ =>
-            val (left, right) = (postOrder(root.left), postOrder(root.right))
+            val (left, right) = (postorder(root.left), postorder(root.right))
             val tilt          = left._1 + right._1 + math.abs(left._2 - right._2)
             (tilt, left._2 + right._2 + root.value)
         }
-      postOrder(root)._1
+      postorder(root)._1
     }
   }
 
@@ -69,15 +69,15 @@ object BinaryTreeTilt extends Enumerable[BinaryTreeTilt] {
   case object Solution1 extends BinaryTreeTilt {
     override def findTilt(root: TreeNode): Int = {
       var sum = 0
-      def postOrder(node: TreeNode): Int =
+      def postorder(node: TreeNode): Int =
         node match {
           case null => 0
           case _ =>
-            val (left, right) = (postOrder(node.left), postOrder(node.right))
+            val (left, right) = (postorder(node.left), postorder(node.right))
             sum += math.abs(left - right)
             node.value + left + right
         }
-      postOrder(root)
+      postorder(root)
       sum
     }
   }
@@ -91,11 +91,8 @@ object BinaryTreeTilt extends Enumerable[BinaryTreeTilt] {
         stack = stack.tail
         if (cur != null) {
           flag match {
-            case 1 =>
-              stack = List((1, cur.left), (1, cur.right), (0, cur)) ::: stack
-              println(stack.map(i => if (i._2 == null) (i._1, null) else (i._1, i._2.value)))
+            case 1 => stack = List((1, cur.left), (1, cur.right), (0, cur)) ::: stack
             case 0 =>
-              println(cur.value)
               tilt += math.abs(map(cur.left) - map(cur.right))
               map += cur -> (cur.value + map(cur.left) + map(cur.right))
           }

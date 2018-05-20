@@ -64,15 +64,16 @@ object MinimumDistanceBetweenBstNodes extends Enumerable[MinimumAbsoluteDifferen
 
   case object Solution1 extends MinimumDistanceBetweenBstNodes {
     override def minDiffInBST(root: TreeNode): Int = {
-      var (cur, pre, min, stack) = (root, null.asInstanceOf[TreeNode], Int.MaxValue, List[TreeNode]())
+      var (cur, min, stack)     = (root, Int.MaxValue, List[TreeNode]())
+      var pre: Option[TreeNode] = None
       while (cur != null || stack.nonEmpty) {
         while (cur != null) {
           stack = cur :: stack
           cur = cur.left
         }
         cur = stack.head
-        if (pre != null) min = math.min(min, cur.value - pre.value)
-        pre = cur
+        if (pre.isDefined) min = math.min(min, cur.value - pre.get.value)
+        pre = Some(cur)
         stack = stack.tail
         cur = cur.right
       }
