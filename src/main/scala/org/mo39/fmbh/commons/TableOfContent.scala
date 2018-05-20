@@ -19,7 +19,7 @@ object TableOfContent extends App with LazyLogging {
       |%s
     """.stripMargin
 
-  private def listProblems(problems: Array[Problem]) =
+  private def listProblems(problems: List[Problem]) =
     problems
       .groupBy(_.category)
       .map(group => s"###### ${group._1}\n${group._2.map(toLink).mkString("\n")}")

@@ -1,13 +1,13 @@
 package org.mo39.fmbh.commons
 
 import com.typesafe.scalalogging.LazyLogging
+import org.apache.commons.text.StringEscapeUtils.unescapeHtml4
 import org.jsoup.Jsoup
 import org.mo39.fmbh.commons.Const._
 import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
 import org.mo39.fmbh.commons.utils.Z.toStrWrapper
 
 import scala.util.Try
-import org.apache.commons.text.StringEscapeUtils.unescapeHtml4
 
 /**
   * Get the LeetDoc description to the clipboard with the signature.
@@ -21,17 +21,18 @@ object LeetDoc extends App with LazyLogging {
 
   val scalaTemplate =
     s"""{{{
-     |%s
-     |}}}
-     |
-     |@see [[%s %s]]
-     |@author mo39.fmbh""".stripMargin
+       |%s
+       |}}}
+       |
+       |@see [[%s %s]]
+       |@author mo39.fmbh""".stripMargin
 
   val javaTemplate =
     s"""<pre>
        |{@code
        |%s
        |}
+       |</pre>
        |
        |@see <a href=%s>%s</a>
        |@author mo39.fmbh""".stripMargin
@@ -42,6 +43,7 @@ object LeetDoc extends App with LazyLogging {
     * 2. The annotation must be followed by a sealed trait for Scala or a public enum for Java
     */
   val regex = s".*(?<!\\*\\/)@ProblemSource\\($LeetCode\\)((sealed trait)|(public enum)).*"
+  val list  = Problems.filter(_.content.mkString.matches(regex))
 
   /* Given a problem name, generate the LeetCode link */
   def linkOf(name: String): String = {
@@ -81,15 +83,15 @@ object LeetDoc extends App with LazyLogging {
     unescapeHtml4(desc).split('\n').flatMap(_.limitWidthTo(70)).mkString("\n")
   }
 
+  /* Main entry */
+  logger.info("Starting...")
+
   /* Format the LeetDoc */
   private def format(str: String) = {
     val content = str.split('\n').map(s => s" * $s").toList
     ("\n/**" :: content ::: " */" :: Nil).mkString("\n")
   }
 
-  /* Main entry */
-  logger.info("Starting...")
-  val list = Problems.filter(_.content.mkString.matches(regex))
   if (list.isEmpty) logger.error("Found nothing.")
   else if (list.length > 1) logger.error(s"Found ${list.map(_.name)}.")
   else {

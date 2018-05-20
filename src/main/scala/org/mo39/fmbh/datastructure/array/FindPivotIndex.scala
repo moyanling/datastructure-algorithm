@@ -54,9 +54,11 @@ sealed trait FindPivotIndex {
 }
 
 object FindPivotIndex extends Enumerable[FindPivotIndex] {
+
   case object Solution extends FindPivotIndex {
     override def pivotIndex(nums: Array[Int]): Int = {
-      var (s, sum) = (0, nums.sum)
+      var s   = 0
+      val sum = nums.sum
       for (i <- nums.indices) {
         if (sum - nums(i) == s * 2) return i
         else s += nums(i)
@@ -64,4 +66,5 @@ object FindPivotIndex extends Enumerable[FindPivotIndex] {
       -1
     }
   }
+
 }
