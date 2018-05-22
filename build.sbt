@@ -14,3 +14,5 @@ libraryDependencies += "ch.qos.logback"             % "logback-classic" % "1.2.3
 libraryDependencies += "commons-io"                 % "commons-io"      % "2.6"
 libraryDependencies += "org.apache.commons"         % "commons-lang3"   % "3.7"
 libraryDependencies += "org.apache.commons"         % "commons-text"    % "1.3"
+libraryDependencies += "org.scalaj"                 %% "scalaj-http"    % "2.4.0"
+libraryDependencies += "com.typesafe.play"          %% "play-json"      % "2.6.7"
