@@ -5,6 +5,8 @@ import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
 import org.mo39.fmbh.commons.classes.TreeNode
 import org.mo39.fmbh.commons.utils.Enumerable
 
+import scala.collection.mutable
+
 /**
   * {{{
   *
@@ -43,7 +45,7 @@ sealed trait DiameterOfBinaryTree {
 }
 
 object DiameterOfBinaryTree extends Enumerable[DiameterOfBinaryTree] {
-  case object Solution extends DiameterOfBinaryTree {
+  case object Solution0 extends DiameterOfBinaryTree {
     override def diameterOfBinaryTree(root: TreeNode): Int = {
       var max = 0
       def postorder(node: TreeNode): Int =
@@ -51,11 +53,45 @@ object DiameterOfBinaryTree extends Enumerable[DiameterOfBinaryTree] {
           case null => 0
           case _ =>
             val (left, right) = (postorder(node.left), postorder(node.right))
-            max = math.max(max, left + right + 1)
+            max = math.max(max, left + right)
             math.max(left, right) + 1
         }
       postorder(root)
-      math.max(max - 1, 0)
+      max
     }
   }
+
+  case object Solution1 extends DiameterOfBinaryTree {
+    override def diameterOfBinaryTree(root: TreeNode): Int = {
+      def postorder(node: TreeNode): (Int, Int) =
+        node match {
+          case null => (0, 0)
+          case _ =>
+            val (lm, rm) = (postorder(node.left), postorder(node.right))
+            (Array(lm._1, rm._1, lm._2 + rm._2).max, math.max(lm._2, rm._2) + 1)
+        }
+      postorder(root)._1
+    }
+  }
+
+  case object Solution2 extends DiameterOfBinaryTree {
+    override def diameterOfBinaryTree(root: TreeNode): Int = {
+      val map          = mutable.Map(null.asInstanceOf[TreeNode] -> 0)
+      var (stack, max) = (List((1, root)), 0)
+      while (stack.nonEmpty) {
+        val (flag, cur) = stack.head
+        stack = stack.tail
+        if (cur != null) {
+          flag match {
+            case 1 => stack = List((1, cur.left), (1, cur.right), (0, cur)) ::: stack
+            case 0 =>
+              map.update(cur, List(map(cur.left), map(cur.right)).max + 1)
+              max = List(max, map(cur.left) + map(cur.right)).max
+          }
+        }
+      }
+      max
+    }
+  }
+
 }
