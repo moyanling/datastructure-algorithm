@@ -76,7 +76,7 @@ object CountBinarySubstrings extends Enumerable[CountBinarySubstrings] {
   case object Solution1 extends CountBinarySubstrings {
     override def countBinarySubstrings(s: String): Int = {
       var count, i, len = 0
-      for (j <- 1 to s.length if s(i) != s(j)) {
+      for (j <- 1 until s.length if s(i) != s(j)) {
         if (len != 0) count += math.min(len, j - i)
         len = j - i
         i = j

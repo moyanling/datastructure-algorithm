@@ -1,4 +1,4 @@
-package org.mo39.fmbh.uncategorized
+package org.mo39.fmbh.algorithm.sort
 
 import org.mo39.fmbh.commons.annotations.ProblemSource
 import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
@@ -40,9 +40,10 @@ sealed trait MaximumProductOfThreeNumbers {
 }
 
 object MaximumProductOfThreeNumbers extends Enumerable[MaximumProductOfThreeNumbers] {
-
   case object Solution extends MaximumProductOfThreeNumbers {
-    override def maximumProduct(nums: Array[Int]): Int = ???
+    override def maximumProduct(nums: Array[Int]): Int = {
+      val sorted = nums.sorted
+      List(sorted.takeRight(3).product, sorted.take(2).product * sorted.last).max
+    }
   }
-
 }
