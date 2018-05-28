@@ -1,4 +1,4 @@
-package org.mo39.fmbh.datastructure.hash
+package org.mo39.fmbh.algorithm.detectloop
 
 import org.mo39.fmbh.commons.MoTestSuite
 

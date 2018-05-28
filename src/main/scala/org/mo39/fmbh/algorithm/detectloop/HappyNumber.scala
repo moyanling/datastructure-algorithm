@@ -1,4 +1,4 @@
-package org.mo39.fmbh.datastructure.hash
+package org.mo39.fmbh.algorithm.detectloop
 
 import org.mo39.fmbh.commons.annotations.ProblemSource
 import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
@@ -35,7 +35,7 @@ sealed trait HappyNumber {
 }
 
 object HappyNumber extends Enumerable[HappyNumber] {
-  case object Solution extends HappyNumber {
+  case object Solution0 extends HappyNumber {
     override def isHappy(n: Int): Boolean = {
       var set = Set[Int]()
       def recur(n: Int): Boolean = {

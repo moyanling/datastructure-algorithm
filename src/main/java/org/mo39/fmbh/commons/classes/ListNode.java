@@ -3,8 +3,11 @@ package org.mo39.fmbh.commons.classes;
 public class ListNode {
   public int val;
   public ListNode next;
+  /* For Scala ListNode definition */
+  public int x;
 
   public ListNode(int x) {
+    this.x = x;
     val = x;
   }
 
