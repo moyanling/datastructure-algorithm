@@ -41,6 +41,7 @@ object PaintHouse extends Enumerable[PaintHouse] {
 
   /**
     * When painting THE house, you got three choices.
+    * The state of the result depends on the state of previous three results.
     */
   case object Solution extends PaintHouse {
     override def minCost(costs: Array[Array[Int]]): Int = {

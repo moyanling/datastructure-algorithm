@@ -43,6 +43,10 @@ sealed trait BestTimeToBuyAndSellStock {
 }
 
 object BestTimeToBuyAndSellStock extends Enumerable[BestTimeToBuyAndSellStock] {
+
+  /**
+    * The state of the result depends on the state of previous one result.
+    */
   case object Solution extends BestTimeToBuyAndSellStock {
     override def maxProfit(prices: Array[Int]): Int = {
       var (min, profit) = (Int.MaxValue, 0)

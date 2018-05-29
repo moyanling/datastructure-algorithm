@@ -57,7 +57,8 @@ object ClimbingStairs extends Enumerable[ClimbingStairs] {
   }
 
   /**
-    * Save some spaces
+    * Save some spaces.
+    * The state of the result depends on the state of previous two results.
     */
   case object Solution1 extends ClimbingStairs {
     override def climbStairs(n: Int): Int = {

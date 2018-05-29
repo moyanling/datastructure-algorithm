@@ -4,11 +4,23 @@
 ### Data Structure
 ###### binarytree
   - [AverageOfLevelsInBinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/AverageOfLevelsInBinaryTree.scala)
+  - [BinaryTreeLevelOrderTraversalII](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/BinaryTreeLevelOrderTraversalII.scala)
+  - [BinaryTreePaths](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/BinaryTreePaths.scala)
+  - [BinaryTreePostorderTraversal](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/BinaryTreePostorderTraversal.scala)
+  - [BinaryTreeTilt](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/BinaryTreeTilt.scala)
   - [ConstructStringFromBinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/ConstructStringFromBinaryTree.scala)
   - [ConvertBstToGreaterTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/ConvertBstToGreaterTree.scala)
+  - [ConvertSortedArrayToBinarySearchTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/ConvertSortedArrayToBinarySearchTree.scala)
+  - [DiameterOfBinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/DiameterOfBinaryTree.scala)
   - [InvertBinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/InvertBinaryTree.scala)
   - [MaximumDepthOfBinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/MaximumDepthOfBinaryTree.scala)
   - [MergeTwoBinaryTrees](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/MergeTwoBinaryTrees.scala)
+  - [MinimumAbsoluteDifferenceInBst](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/MinimumAbsoluteDifferenceInBst.scala)
+  - [MinimumDistanceBetweenBstNodes](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/MinimumDistanceBetweenBstNodes.scala)
+  - [SameTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SameTree.scala)
+  - [SecondMinimumNodeInABinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SecondMinimumNodeInABinaryTree.scala)
+  - [SerializeAndDeserializeBinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SerializeAndDeserializeBinaryTree.scala)
+  - [SumOfLeftLeaves](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SumOfLeftLeaves.scala)
   - [TrimABinarySearchTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/TrimABinarySearchTree.scala)
   - [TwoSumIvInputIsABst](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/TwoSumIvInputIsABst.scala)
 ###### design
@@ -25,36 +37,47 @@
   - [GoatLatin](../master/src/main/scala/org/mo39/fmbh/datastructure/string/GoatLatin.scala)
   - [IpToCidr](../master/src/main/scala/org/mo39/fmbh/datastructure/string/IpToCidr.scala)
   - [JudgeRouteCircle](../master/src/main/scala/org/mo39/fmbh/datastructure/string/JudgeRouteCircle.scala)
+  - [LongestPalindrome](../master/src/main/scala/org/mo39/fmbh/datastructure/string/LongestPalindrome.scala)
   - [LongestUncommonSubsequenceI](../master/src/main/scala/org/mo39/fmbh/datastructure/string/LongestUncommonSubsequenceI.scala)
   - [ReverseString](../master/src/main/scala/org/mo39/fmbh/datastructure/string/ReverseString.scala)
+  - [ReverseStringII](../master/src/main/scala/org/mo39/fmbh/datastructure/string/ReverseStringII.scala)
 ###### array
   - [ArrayPartitionI](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ArrayPartitionI.scala)
   - [ContainsDuplicate](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ContainsDuplicate.scala)
+  - [DegreeOfAnArray](../master/src/main/scala/org/mo39/fmbh/datastructure/array/DegreeOfAnArray.scala)
   - [DistributeCandies](../master/src/main/scala/org/mo39/fmbh/datastructure/array/DistributeCandies.scala)
   - [FindAllNumbersDisappearedInAnArray](../master/src/main/scala/org/mo39/fmbh/datastructure/array/FindAllNumbersDisappearedInAnArray.scala)
+  - [FindPivotIndex](../master/src/main/scala/org/mo39/fmbh/datastructure/array/FindPivotIndex.scala)
   - [FindSmallestLetterGreaterThanTarget](../master/src/main/scala/org/mo39/fmbh/datastructure/array/FindSmallestLetterGreaterThanTarget.scala)
   - [FirstUniqueCharacterInAString](../master/src/main/scala/org/mo39/fmbh/datastructure/array/FirstUniqueCharacterInAString.scala)
   - [FlipGame](../master/src/main/scala/org/mo39/fmbh/datastructure/array/FlipGame.scala)
+  - [FlippingAnImage](../master/src/main/scala/org/mo39/fmbh/datastructure/array/FlippingAnImage.scala)
   - [ImageSmoother](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ImageSmoother.scala)
+  - [IntersectionOfTwoArraysII](../master/src/main/scala/org/mo39/fmbh/datastructure/array/IntersectionOfTwoArraysII.scala)
   - [IslandPerimeter](../master/src/main/scala/org/mo39/fmbh/datastructure/array/IslandPerimeter.scala)
   - [LargestNumberAtLeastTwiceOfOthers](../master/src/main/scala/org/mo39/fmbh/datastructure/array/LargestNumberAtLeastTwiceOfOthers.scala)
   - [MajorityElement](../master/src/main/scala/org/mo39/fmbh/datastructure/array/MajorityElement.scala)
   - [MaxConsecutiveOnes](../master/src/main/scala/org/mo39/fmbh/datastructure/array/MaxConsecutiveOnes.scala)
   - [MaximumAverageSubarrayI](../master/src/main/scala/org/mo39/fmbh/datastructure/array/MaximumAverageSubarrayI.scala)
-  - [MinimumMovesToEqualArrayElements](../master/src/main/scala/org/mo39/fmbh/datastructure/array/MinimumMovesToEqualArrayElements.scala)
   - [MissingNumber](../master/src/main/scala/org/mo39/fmbh/datastructure/array/MissingNumber.scala)
   - [MoveZeroes](../master/src/main/scala/org/mo39/fmbh/datastructure/array/MoveZeroes.scala)
   - [NestedListWeightSum](../master/src/main/scala/org/mo39/fmbh/datastructure/array/NestedListWeightSum.scala)
   - [NextGreaterElementI](../master/src/main/scala/org/mo39/fmbh/datastructure/array/NextGreaterElementI.scala)
+  - [PositionsOfLargeGroups](../master/src/main/scala/org/mo39/fmbh/datastructure/array/PositionsOfLargeGroups.scala)
+  - [RangeAdditionII](../master/src/main/scala/org/mo39/fmbh/datastructure/array/RangeAdditionII.scala)
   - [RelativeRanks](../master/src/main/scala/org/mo39/fmbh/datastructure/array/RelativeRanks.scala)
   - [RemoveElement](../master/src/main/scala/org/mo39/fmbh/datastructure/array/RemoveElement.scala)
   - [ReshapeTheMatrix](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ReshapeTheMatrix.scala)
-  - [ReverseWordsInAStringIii](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ReverseWordsInAStringIii.scala)
+  - [ReverseWordsInAStringIII](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ReverseWordsInAStringIII.scala)
+  - [RotateString](../master/src/main/scala/org/mo39/fmbh/datastructure/array/RotateString.scala)
   - [SetMismatch](../master/src/main/scala/org/mo39/fmbh/datastructure/array/SetMismatch.scala)
+  - [SimilarRgbColor](../master/src/main/scala/org/mo39/fmbh/datastructure/array/SimilarRgbColor.scala)
+  - [StudentAttendanceRecordI](../master/src/main/scala/org/mo39/fmbh/datastructure/array/StudentAttendanceRecordI.scala)
   - [ToeplitzMatrix](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ToeplitzMatrix.scala)
 ###### hash
   - [FindAnagramMappings](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/FindAnagramMappings.scala)
   - [FindTheDifference](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/FindTheDifference.scala)
+  - [IntersectionOfTwoArrays](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/IntersectionOfTwoArrays.scala)
   - [JewelsAndStones](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/JewelsAndStones.scala)
   - [KeyboardRow](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/KeyboardRow.scala)
   - [LongestWordInDictionary](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/LongestWordInDictionary.scala)
@@ -70,11 +93,25 @@
   - [TwoSum](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/TwoSum.scala)
   - [UniqueMorseCodeWords](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/UniqueMorseCodeWords.scala)
   - [ValidAnagram](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/ValidAnagram.scala)
+###### linkedlist
+  - [MergeTwoSortedLists](../master/src/main/scala/org/mo39/fmbh/datastructure/linkedlist/MergeTwoSortedLists.scala)
+  - [ReverseLinkedList](../master/src/main/scala/org/mo39/fmbh/datastructure/linkedlist/ReverseLinkedList.scala)
+  - [DeleteNodeInALinkedList](../master/src/main/java/org/mo39/fmbh/datastructure/linkedlist/DeleteNodeInALinkedList.java)
 ###### stack
   - [BaseballGame](../master/src/main/scala/org/mo39/fmbh/datastructure/stack/BaseballGame.scala)
+  - [BestTimeToBuyAndSellStockII](../master/src/main/scala/org/mo39/fmbh/datastructure/stack/BestTimeToBuyAndSellStockII.scala)
 ### Algorithm
 ###### dynamicprogramming
+  - [BestTimeToBuyAndSellStock](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/BestTimeToBuyAndSellStock.scala)
+  - [ClimbingStairs](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/ClimbingStairs.scala)
   - [MinCostClimbingStairs](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/MinCostClimbingStairs.scala)
+  - [PaintHouse](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/PaintHouse.scala)
+###### twopointers
+  - [LongestContinuousIncreasingSubsequence](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/LongestContinuousIncreasingSubsequence.scala)
+  - [TwoSumIiInputArrayIsSorted](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/TwoSumIiInputArrayIsSorted.scala)
+###### permutation
+  - [LetterCasePermutation](../master/src/main/scala/org/mo39/fmbh/algorithm/permutation/LetterCasePermutation.scala)
+  - [NumberOfBoomerangs](../master/src/main/scala/org/mo39/fmbh/algorithm/permutation/NumberOfBoomerangs.scala)
 ###### bitmanipulation
   - [BinaryNumberWithAlternatingBits](../master/src/main/scala/org/mo39/fmbh/algorithm/bitmanipulation/BinaryNumberWithAlternatingBits.scala)
   - [NumberComplement](../master/src/main/scala/org/mo39/fmbh/algorithm/bitmanipulation/NumberComplement.scala)
@@ -82,17 +119,32 @@
   - [SumOfTwoIntegers](../master/src/main/scala/org/mo39/fmbh/algorithm/bitmanipulation/SumOfTwoIntegers.scala)
 ###### dfs
   - [EmployeeImportance](../master/src/main/scala/org/mo39/fmbh/algorithm/dfs/EmployeeImportance.scala)
+  - [FloodFill](../master/src/main/scala/org/mo39/fmbh/algorithm/dfs/FloodFill.scala)
 ###### bruteforce
   - [LargestTriangleArea](../master/src/main/scala/org/mo39/fmbh/algorithm/bruteforce/LargestTriangleArea.scala)
+###### math
+  - [Base7](../master/src/main/scala/org/mo39/fmbh/algorithm/math/Base7.scala)
+  - [MinimumMovesToEqualArrayElements](../master/src/main/scala/org/mo39/fmbh/algorithm/math/MinimumMovesToEqualArrayElements.scala)
+###### algorithm
+  - [](../master/src/main/java/org/mo39/fmbh/algorithm/.keep)
+###### greedy
+  - [AssignCookies](../master/src/main/scala/org/mo39/fmbh/algorithm/greedy/AssignCookies.scala)
 ###### graph
   - [MaxAreaOfIsland](../master/src/main/scala/org/mo39/fmbh/algorithm/graph/MaxAreaOfIsland.scala)
+###### combination
+  - [BinaryWatch](../master/src/main/scala/org/mo39/fmbh/algorithm/combination/BinaryWatch.scala)
 ###### sort
+  - [MaximumProductOfThreeNumbers](../master/src/main/scala/org/mo39/fmbh/algorithm/sort/MaximumProductOfThreeNumbers.scala)
   - [MeetingRooms](../master/src/main/scala/org/mo39/fmbh/algorithm/sort/MeetingRooms.scala)
+###### detectloop
+  - [HappyNumber](../master/src/main/scala/org/mo39/fmbh/algorithm/detectloop/HappyNumber.scala)
 ###### slidingwindow
   - [SlidingWindowMaximum](../master/src/main/scala/org/mo39/fmbh/algorithm/slidingwindow/SlidingWindowMaximum.scala)
 ### Uncategorized
   - [ConstructTheRectangle](../master/src/main/scala/org/mo39/fmbh/uncategorized/ConstructTheRectangle.scala)
+  - [ExcelSheetColumnNumber](../master/src/main/scala/org/mo39/fmbh/uncategorized/ExcelSheetColumnNumber.scala)
   - [NumberOfLinesToWriteString](../master/src/main/scala/org/mo39/fmbh/uncategorized/NumberOfLinesToWriteString.scala)
   - [OneBitAndTwoBitCharacters](../master/src/main/scala/org/mo39/fmbh/uncategorized/OneBitAndTwoBitCharacters.scala)
   - [SelfDividingNumbers](../master/src/main/scala/org/mo39/fmbh/uncategorized/SelfDividingNumbers.scala)
+  - [](../master/src/main/java/org/mo39/fmbh/uncategorized/.keep)
     

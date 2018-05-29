@@ -48,6 +48,10 @@ sealed trait MinCostClimbingStairs {
 }
 
 object MinCostClimbingStairs extends Enumerable[MinCostClimbingStairs] {
+
+  /**
+    * The state of the result depends on the state of previous two results.
+    */
   case object Solution extends MinCostClimbingStairs {
     override def minCostClimbingStairs(cost: Array[Int]): Int = {
       val memo = new Array[Int](cost.length + 2)
