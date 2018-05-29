@@ -8,9 +8,9 @@ import org.mo39.fmbh.commons.utils.Z._
 object Main extends App with LazyLogging {
 
   logger.info("Starting...")
-  val workspaceId = "workspace_5643e05d5db946598498bdf3f079d1fc"
+  val workspaceId = "workspace_19f0e594c1cc46b2b82ffdd817fba1f2"
   val body = Http(
-    s"http://appschema-server.appschema-server.next.test.internal.microstrategy.com:9000/workspaces/$workspaceId/queryplans")
+    s"http://10.15.69.120:9000/workspaces/$workspaceId/queryplans")
     .method("POST")
     .header("Content-Type", "application/json")
     .header("Charset", "UTF-8")
@@ -20,13 +20,11 @@ object Main extends App with LazyLogging {
 
   val json = Json.parse(body)
 
-  println(json)
-
   (json \\ "sql")
-    .map(_.as[String].replace("\t", " ").split("where").last)
+    .map(_.as[String].replace("\t", " ").split("\\n(?=where)").last)
     .map(s => {
       val str = //s"where  $s"
-        if (s.contains("where")) s//"The generated SQL should have the where clause \"" + s + "\""
+        if (s.contains("where")) "The generated SQL should have the where clause\n\"" + s + "\""
         else "The generated SQL should not have the where clause"
       logger.info(str)
       str
