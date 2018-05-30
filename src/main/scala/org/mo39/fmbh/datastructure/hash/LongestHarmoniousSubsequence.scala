@@ -1,10 +1,8 @@
-package org.mo39.fmbh.algorithm.dynamicprogramming
+package org.mo39.fmbh.datastructure.hash
 
 import org.mo39.fmbh.commons.annotations.ProblemSource
 import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
 import org.mo39.fmbh.commons.utils.Enumerable
-
-import scala.collection.mutable.ArrayBuffer
 
 /**
   * {{{
@@ -42,8 +40,13 @@ object LongestHarmoniousSubsequence extends Enumerable[LongestHarmoniousSubseque
     */
   case object Solution extends LongestHarmoniousSubsequence {
     override def findLHS(nums: Array[Int]): Int = {
-      val memo = ArrayBuffer[(Int, Int)]()
-      ???
+      val counts = nums.groupBy(identity).mapValues(_.length)
+      var max    = 0
+      for (key <- counts.keys) {
+        if (counts.contains(key + 1)) max = math.max(counts(key) + counts(key + 1), max)
+        if (counts.contains(key - 1)) max = math.max(counts(key) + counts(key - 1), max)
+      }
+      max
     }
   }
 
