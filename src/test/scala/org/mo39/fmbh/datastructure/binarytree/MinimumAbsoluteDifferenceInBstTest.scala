@@ -8,7 +8,7 @@ class MinimumAbsoluteDifferenceInBstTest extends MoTestSuite[MinimumAbsoluteDiff
   g() { solution =>
     assert(
       solution
-        .getMinimumDifference(TreeNode.of("[1,null,3,null,null,2]")) === 1)
+        .getMinimumDifference(TreeNode.of("[1,null,3,2]")) === 1)
   }
 
   g("[1,null,2]") { solution =>

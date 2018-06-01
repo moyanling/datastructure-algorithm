@@ -11,6 +11,7 @@ case class TreeNode(private var _value: Int) {
   var left: TreeNode  = _
   var right: TreeNode = _
 
+  /* The String presentation of the tree CAN NOT be used to deserialize back to itself */
   override def toString: String = s"\n${Solution1.serialize(this)}\n"
 
   override def equals(obj: scala.Any): Boolean =
@@ -20,5 +21,5 @@ case class TreeNode(private var _value: Int) {
 }
 
 object TreeNode {
-  def of(s: String): TreeNode = Solution0.deserialize(s)
+  def of(s: String): TreeNode = Solution2.deserialize(s)
 }

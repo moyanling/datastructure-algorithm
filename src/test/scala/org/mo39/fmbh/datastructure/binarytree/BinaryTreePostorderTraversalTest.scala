@@ -9,8 +9,8 @@ class BinaryTreePostorderTraversalTest extends MoTestSuite[BinaryTreePostorderTr
     assert(solution.postorderTraversal(null) === Nil)
   }
 
-  g("[1,null,2,null,null,3]") { solution =>
-    assert(solution.postorderTraversal(TreeNode.of("[1,null,2,null,null,3]")) === List(3, 2, 1))
+  g("[1,null,2,3]") { solution =>
+    assert(solution.postorderTraversal(TreeNode.of("[1,null,2,3]")) === List(3, 2, 1))
   }
 
 }

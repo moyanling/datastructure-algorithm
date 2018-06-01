@@ -45,14 +45,16 @@ sealed trait BinaryTreeLevelOrderTraversalII {
 
 object BinaryTreeLevelOrderTraversalII extends Enumerable[BinaryTreeLevelOrderTraversalII] {
   case object Solution extends BinaryTreeLevelOrderTraversalII {
-    override def levelOrderBottom(root: TreeNode): List[List[Int]] = {
-      if (root == null) return Nil
-      var (level, result) = (List(root), List[List[Int]]())
-      while (level.nonEmpty) {
-        result = level.map(_.value) :: result
-        level = level.flatMap(n => List(n.left, n.right)).filter(_ != null)
+    override def levelOrderBottom(root: TreeNode): List[List[Int]] =
+      root match {
+        case null => Nil
+        case _ =>
+          var (level, result) = (List(root), List[List[Int]]())
+          while (level.nonEmpty) {
+            result = level.map(_.value) :: result
+            level = level.flatMap(n => List(n.left, n.right)).filter(_ != null)
+          }
+          result
       }
-      result
-    }
   }
 }

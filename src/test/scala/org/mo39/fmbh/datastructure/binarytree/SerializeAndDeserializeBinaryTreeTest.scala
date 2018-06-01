@@ -35,15 +35,33 @@ class SerializeAndDeserializeBinaryTreeTest extends MoTestSuite[SerializeAndDese
     root
   }
 
-  g() { solution =>
-    assert(solution.deserialize(solution.serialize(tree1)) === tree1)
-    assert(solution.deserialize(solution.serialize(tree2)) === tree2)
-    assert(solution.deserialize(solution.serialize(tree3)) === tree3)
-    assert(solution.deserialize(solution.serialize(tree1)) !== tree2)
+  val tree5 = {
+    val root = TreeNode(5)
+    root.left = TreeNode(4)
+    root.left.left = TreeNode(3)
+    root.left.left.left = TreeNode(-1)
+    root.right = TreeNode(7)
+    root.right.left = TreeNode(2)
+    root.right.left.left = TreeNode(9)
+    root
   }
 
-  test("[1, 2, 3, 4, 5]") {
+  g("tree1") { solution =>
+    assert(solution.deserialize(solution.serialize(tree1)) === tree1)
+  }
+
+  g("tree2") { solution =>
+    assert(solution.deserialize(solution.serialize(tree2)) === tree2)
+  }
+
+  g("tree3") { solution =>
+    assert(solution.deserialize(solution.serialize(tree3)) === tree3)
+  }
+  test("Solution0 deserialize: [1, 2, 3, 4, 5]") {
     assert(SerializeAndDeserializeBinaryTree.Solution0.deserialize("[1, 2, 3, 4, 5]") === tree4)
+  }
+  test("Solution2 deserialize: [5,4,7,3,null,2,null,-1,null,9]") {
+    assert(SerializeAndDeserializeBinaryTree.Solution2.deserialize("[5,4,7,3,null,2,null,-1,null,9]") === tree5)
   }
 
 }

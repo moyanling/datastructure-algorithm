@@ -5,7 +5,7 @@ import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
 import org.mo39.fmbh.commons.classes.TreeNode
 import org.mo39.fmbh.commons.utils.Enumerable
 
-import scala.collection.mutable.{ ArrayBuffer, ListBuffer }
+import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 
 /**
   * {{{
@@ -56,25 +56,22 @@ sealed trait SerializeAndDeserializeBinaryTree {
 
 case object SerializeAndDeserializeBinaryTree extends Enumerable[SerializeAndDeserializeBinaryTree] {
 
+  private def getChildren(node: TreeNode) = if (node == null) List(null, null) else List(node.left, node.right)
+
   private def deserialize(s: String, nullPresentation: String) = {
     val arr = s.stripPrefix("[").stripSuffix("]").split(",").map(_.trim)
-    val mkNode = (i: Int) => {
-      if (i >= arr.length || arr(i) == nullPresentation) null
-      else TreeNode(arr(i).toInt)
-    }
-    val root       = mkNode(0)
+    val mkNode = (i: Int) => if (i >= arr.length || arr(i) == nullPresentation) null else TreeNode(arr(i).toInt)
+    val root = mkNode(0)
     var (i, level) = (0, List(root))
-    while (level.nonEmpty) {
-      var nextLevel = ListBuffer[TreeNode]()
+    while (level.nonEmpty && i < arr.length) {
       for (node <- level) {
         i += 2
         if (node != null) {
           node.left = mkNode(i - 1)
           node.right = mkNode(i)
-          nextLevel ++= List(node.left, node.right)
-        } else nextLevel ++= List(null, null)
+        }
       }
-      level = if (i >= arr.length - 1) Nil else nextLevel.toList
+      level = level.flatMap(getChildren)
     }
     root
   }
@@ -84,11 +81,10 @@ case object SerializeAndDeserializeBinaryTree extends Enumerable[SerializeAndDes
     override def serialize(treeNode: TreeNode): String = {
       if (treeNode == null) return "[]"
       var level = List[TreeNode](treeNode)
-      var list  = ListBuffer[String]()
+      var list = ListBuffer[String]()
       while (level.nonEmpty) {
         list ++= level.map(n => if (n != null) n.value.toString else "null")
-        val nextLevel = level
-          .flatMap(n => if (n != null) List(n.left, n.right) else List(null, null))
+        val nextLevel = level.flatMap(getChildren)
         level = if (nextLevel.exists(_ != null)) nextLevel else Nil
       }
       list = list.dropRight(list.length - list.lastIndexWhere(_ != null) - 1)
@@ -106,16 +102,9 @@ case object SerializeAndDeserializeBinaryTree extends Enumerable[SerializeAndDes
     override def serialize(root: TreeNode): String = {
       if (root == null) return "null"
       var (buf, level) = (ArrayBuffer[String](), List(root))
-      while (level.nonEmpty) {
-        buf += level
-          .map(n => if (n == null) "#" else n.value.toString)
-          .mkString(", ")
-        var next = ListBuffer[TreeNode]()
-        for (node <- level) {
-          if (node != null) next ++= List(node.left, node.right)
-          else next ++= List(null, null)
-        }
-        level = if (next.forall(_ == null)) Nil else next.toList
+      while (level.nonEmpty && level.exists(_ != null)) {
+        buf += level.map(n => if (n == null) "#" else n.value.toString).mkString(", ")
+        level = level.flatMap(getChildren)
       }
       buf.mkString("\n")
     }
@@ -123,7 +112,36 @@ case object SerializeAndDeserializeBinaryTree extends Enumerable[SerializeAndDes
     override def deserialize(s: String): TreeNode = {
       require(s != null && s.contains('\n') || s == "null")
       if (s == "null") return null
-      SerializeAndDeserializeBinaryTree.deserialize("[" + s.split('\n').mkString(", ") + "]", "#")
+      SerializeAndDeserializeBinaryTree.deserialize(s.split('\n').mkString(","), "#")
+    }
+  }
+
+  case object Solution2 extends SerializeAndDeserializeBinaryTree {
+    override def serialize(root: TreeNode): String = {
+      var result = ArrayBuffer[String]()
+      var level = List(root)
+      while (level.nonEmpty && level.exists(_ != null)) {
+        result += level.map(n => if (n == null) "null" else n.value).mkString(",")
+        level = level.filter(_ != null).flatMap(n => List(n.left, n.right))
+      }
+      result.mkString("[", ",", "]")
+    }
+
+    override def deserialize(s: String): TreeNode = {
+      if (s == "[]") return null
+      val arr = s.stripPrefix("[").stripSuffix("]").split(",").map(_.trim)
+      val mkNode = (i: Int) => if (i >= arr.length || arr(i) == "null") null else TreeNode(arr(i).toInt)
+      val root = mkNode(0)
+      var (i, level) = (1, List(root))
+      while (level.nonEmpty && i < arr.length) {
+        for (node <- level if node != null) {
+          node.left = mkNode(i)
+          node.right = mkNode(i + 1)
+          i += 2
+        }
+        level = level.filter(_ != null).flatMap(n => List(n.left, n.right))
+      }
+      root
     }
   }
 

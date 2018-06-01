@@ -19,7 +19,7 @@ class DiameterOfBinaryTreeTest extends MoTestSuite[DiameterOfBinaryTree] {
 
   g("Complex one") { solution =>
     val root = TreeNode.of("[1,2]")
-    root.right = TreeNode.of("[3,4,5,6,null,7,null,null,null,null,null,8]")
+    root.right = TreeNode.of("[3,4,5,6,null,7,null,null,null,8]")
     assert(solution.diameterOfBinaryTree(root) === 5)
   }
 

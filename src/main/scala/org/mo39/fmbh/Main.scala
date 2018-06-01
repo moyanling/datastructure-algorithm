@@ -8,9 +8,9 @@ import org.mo39.fmbh.commons.utils.Z._
 object Main extends App with LazyLogging {
 
   logger.info("Starting...")
-  val workspaceId = "workspace_19f0e594c1cc46b2b82ffdd817fba1f2"
+  val workspaceId = "workspace_3e698c4a3dcf4797bbd136231a5ea6df"
   val body = Http(
-    s"http://10.15.69.120:9000/workspaces/$workspaceId/queryplans")
+    s"http://appschema-server.appschema-server.next.test.internal.microstrategy.com:9000/workspaces/$workspaceId/queryplans")
     .method("POST")
     .header("Content-Type", "application/json")
     .header("Charset", "UTF-8")
@@ -19,7 +19,7 @@ object Main extends App with LazyLogging {
     .body
 
   val json = Json.parse(body)
-
+  println(json)
   (json \\ "sql")
     .map(_.as[String].replace("\t", " ").split("\\n(?=where)").last)
     .map(s => {

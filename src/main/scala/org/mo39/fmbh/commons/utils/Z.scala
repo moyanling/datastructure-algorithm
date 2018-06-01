@@ -43,6 +43,13 @@ object Z {
     arr(i) = arr(i) ^ arr(j)
   }
 
+  /**
+    * Within an Array, move those elements that satisfy the predicate to the front.
+    *
+    * @param nums the Array
+    * @param p the predicate
+    * @return the length of the elements that satisfy the predicate
+    */
   def partition(nums: Array[Int], p: Int => Boolean): Int = {
     var j = 0
     for (i <- nums.indices) {

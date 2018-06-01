@@ -1,6 +1,5 @@
-package org.mo39.fmbh.uncategorized
+package org.mo39.fmbh.algorithm.bruteforce
 
-import org.mo39.fmbh.algorithm.bruteforce.LargestTriangleArea
 import org.mo39.fmbh.commons.MoTestSuite
 import org.scalactic.Tolerance._
 

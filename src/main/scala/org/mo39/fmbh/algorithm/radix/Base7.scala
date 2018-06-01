@@ -1,4 +1,4 @@
-package org.mo39.fmbh.algorithm.math
+package org.mo39.fmbh.algorithm.radix
 
 import org.mo39.fmbh.commons.annotations.ProblemSource
 import org.mo39.fmbh.commons.annotations.ProblemSource.SourceValue.LeetCode
