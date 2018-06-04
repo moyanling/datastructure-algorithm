@@ -21,4 +21,5 @@ class ClosestBinarySearchTreeValueTest extends MoTestSuite[ClosestBinarySearchTr
         3.285714
       ) === 3)
   }
+
 }

@@ -8,6 +8,7 @@
   - [BinaryTreePaths](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/BinaryTreePaths.scala)
   - [BinaryTreePostorderTraversal](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/BinaryTreePostorderTraversal.scala)
   - [BinaryTreeTilt](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/BinaryTreeTilt.scala)
+  - [ClosestBinarySearchTreeValue](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/ClosestBinarySearchTreeValue.scala)
   - [ConstructStringFromBinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/ConstructStringFromBinaryTree.scala)
   - [ConvertBstToGreaterTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/ConvertBstToGreaterTree.scala)
   - [ConvertSortedArrayToBinarySearchTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/ConvertSortedArrayToBinarySearchTree.scala)
@@ -80,6 +81,7 @@
   - [IntersectionOfTwoArrays](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/IntersectionOfTwoArrays.scala)
   - [JewelsAndStones](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/JewelsAndStones.scala)
   - [KeyboardRow](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/KeyboardRow.scala)
+  - [LongestHarmoniousSubsequence](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/LongestHarmoniousSubsequence.scala)
   - [LongestWordInDictionary](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/LongestWordInDictionary.scala)
   - [MinimumIndexSumOfTwoLists](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/MinimumIndexSumOfTwoLists.scala)
   - [MostCommonWord](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/MostCommonWord.scala)
@@ -95,6 +97,7 @@
   - [ValidAnagram](../master/src/main/scala/org/mo39/fmbh/datastructure/hash/ValidAnagram.scala)
 ###### linkedlist
   - [MergeTwoSortedLists](../master/src/main/scala/org/mo39/fmbh/datastructure/linkedlist/MergeTwoSortedLists.scala)
+  - [RemoveDuplicatesFromSortedList](../master/src/main/scala/org/mo39/fmbh/datastructure/linkedlist/RemoveDuplicatesFromSortedList.scala)
   - [ReverseLinkedList](../master/src/main/scala/org/mo39/fmbh/datastructure/linkedlist/ReverseLinkedList.scala)
   - [DeleteNodeInALinkedList](../master/src/main/java/org/mo39/fmbh/datastructure/linkedlist/DeleteNodeInALinkedList.java)
 ###### stack
@@ -104,10 +107,13 @@
 ###### dynamicprogramming
   - [BestTimeToBuyAndSellStock](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/BestTimeToBuyAndSellStock.scala)
   - [ClimbingStairs](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/ClimbingStairs.scala)
+  - [MaximumSubarray](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/MaximumSubarray.scala)
   - [MinCostClimbingStairs](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/MinCostClimbingStairs.scala)
   - [PaintHouse](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/PaintHouse.scala)
+  - [PascalsTriangle](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/PascalsTriangle.scala)
 ###### twopointers
   - [LongestContinuousIncreasingSubsequence](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/LongestContinuousIncreasingSubsequence.scala)
+  - [RemoveElement](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/RemoveElement.scala)
   - [TwoSumIiInputArrayIsSorted](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/TwoSumIiInputArrayIsSorted.scala)
 ###### permutation
   - [LetterCasePermutation](../master/src/main/scala/org/mo39/fmbh/algorithm/permutation/LetterCasePermutation.scala)
@@ -120,10 +126,11 @@
 ###### dfs
   - [EmployeeImportance](../master/src/main/scala/org/mo39/fmbh/algorithm/dfs/EmployeeImportance.scala)
   - [FloodFill](../master/src/main/scala/org/mo39/fmbh/algorithm/dfs/FloodFill.scala)
+###### radix
+  - [Base7](../master/src/main/scala/org/mo39/fmbh/algorithm/radix/Base7.scala)
 ###### bruteforce
   - [LargestTriangleArea](../master/src/main/scala/org/mo39/fmbh/algorithm/bruteforce/LargestTriangleArea.scala)
 ###### math
-  - [Base7](../master/src/main/scala/org/mo39/fmbh/algorithm/math/Base7.scala)
   - [MinimumMovesToEqualArrayElements](../master/src/main/scala/org/mo39/fmbh/algorithm/math/MinimumMovesToEqualArrayElements.scala)
 ###### algorithm
   - [](../master/src/main/java/org/mo39/fmbh/algorithm/.keep)
@@ -145,6 +152,7 @@
   - [ExcelSheetColumnNumber](../master/src/main/scala/org/mo39/fmbh/uncategorized/ExcelSheetColumnNumber.scala)
   - [NumberOfLinesToWriteString](../master/src/main/scala/org/mo39/fmbh/uncategorized/NumberOfLinesToWriteString.scala)
   - [OneBitAndTwoBitCharacters](../master/src/main/scala/org/mo39/fmbh/uncategorized/OneBitAndTwoBitCharacters.scala)
+  - [PlusOne](../master/src/main/scala/org/mo39/fmbh/uncategorized/PlusOne.scala)
   - [SelfDividingNumbers](../master/src/main/scala/org/mo39/fmbh/uncategorized/SelfDividingNumbers.scala)
   - [](../master/src/main/java/org/mo39/fmbh/uncategorized/.keep)
     

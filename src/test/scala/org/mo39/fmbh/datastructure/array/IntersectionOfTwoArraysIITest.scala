@@ -3,6 +3,7 @@ package org.mo39.fmbh.datastructure.array
 import org.mo39.fmbh.commons.MoTestSuite
 
 class IntersectionOfTwoArraysIITest extends MoTestSuite[IntersectionOfTwoArraysII] {
+
   g("nums1 = [1, 2, 2, 1], nums2 = [2, 2]") { solution =>
     assert(solution.intersect(Array(1, 2, 1, 2), Array(2, 2)) === Array(2, 2))
   }

@@ -4,6 +4,7 @@ import org.mo39.fmbh.commons.MoTestSuite
 import org.mo39.fmbh.commons.classes.TreeNode
 
 class SecondMinimumNodeInABinaryTreeTest extends MoTestSuite[SecondMinimumNodeInABinaryTree] {
+
   g("[2,2,2]") { solution =>
     assert(solution.findSecondMinimumValue(TreeNode.of("[2,2,2]")) === -1)
   }

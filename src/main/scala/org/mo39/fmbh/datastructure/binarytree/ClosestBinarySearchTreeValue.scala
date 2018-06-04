@@ -38,20 +38,13 @@ sealed trait ClosestBinarySearchTreeValue {
 object ClosestBinarySearchTreeValue extends Enumerable[ClosestBinarySearchTreeValue] {
   case object Solution extends ClosestBinarySearchTreeValue {
     override def closestValue(root: TreeNode, target: Double): Int = {
-      var cur = root
+      var (cur, result) = (root, root.value)
       while (cur != null) {
-        println(cur.value)
-        if (cur.value < target) {
-          if (cur.right == null) return cur.value
-          else if (cur.right.value > target) return List(cur.value, cur.right.value).minBy(i => math.abs(i - target))
-          else cur = cur.right
-        } else if (cur.value > target) {
-          if (cur.left == null) return cur.value
-          else if (cur.left.value < target) return List(cur.value, cur.left.value).minBy(i => math.abs(i - target))
-          else cur = cur.left
-        } else return cur.value
+        if (cur.value == target) return cur.value
+        if (math.abs(cur.value - target) < math.abs(result - target)) result = cur.value
+        cur = if (target > cur.value) cur.right else cur.left
       }
-      -1
+      result
     }
   }
 }

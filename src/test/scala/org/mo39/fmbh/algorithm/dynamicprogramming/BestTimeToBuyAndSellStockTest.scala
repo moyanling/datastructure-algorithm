@@ -3,6 +3,7 @@ package org.mo39.fmbh.algorithm.dynamicprogramming
 import org.mo39.fmbh.commons.MoTestSuite
 
 class BestTimeToBuyAndSellStockTest extends MoTestSuite[BestTimeToBuyAndSellStock] {
+
   g("empty") { solution =>
     assert(solution.maxProfit(Array.empty) === 0)
   }
