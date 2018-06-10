@@ -117,7 +117,9 @@
   - [PascalsTriangle](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/PascalsTriangle.scala)
 ###### twopointers
   - [LongestContinuousIncreasingSubsequence](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/LongestContinuousIncreasingSubsequence.scala)
+  - [MaximizeDistanceToClosestPerson](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/MaximizeDistanceToClosestPerson.scala)
   - [RemoveElement](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/RemoveElement.scala)
+  - [ReverseVowelsOfAString](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/ReverseVowelsOfAString.scala)
   - [TwoSumIiInputArrayIsSorted](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/TwoSumIiInputArrayIsSorted.scala)
 ###### dichotomy
   - [SearchInsertPosition](../master/src/main/scala/org/mo39/fmbh/algorithm/dichotomy/SearchInsertPosition.scala)
@@ -140,8 +142,6 @@
 ###### math
   - [MinimumMovesToEqualArrayElements](../master/src/main/scala/org/mo39/fmbh/algorithm/math/MinimumMovesToEqualArrayElements.scala)
   - [PascalsTriangleII](../master/src/main/scala/org/mo39/fmbh/algorithm/math/PascalsTriangleII.scala)
-###### algorithm
-  - [](../master/src/main/java/org/mo39/fmbh/algorithm/.keep)
 ###### greedy
   - [AssignCookies](../master/src/main/scala/org/mo39/fmbh/algorithm/greedy/AssignCookies.scala)
 ###### graph
@@ -162,5 +162,4 @@
   - [OneBitAndTwoBitCharacters](../master/src/main/scala/org/mo39/fmbh/uncategorized/OneBitAndTwoBitCharacters.scala)
   - [PlusOne](../master/src/main/scala/org/mo39/fmbh/uncategorized/PlusOne.scala)
   - [SelfDividingNumbers](../master/src/main/scala/org/mo39/fmbh/uncategorized/SelfDividingNumbers.scala)
-  - [](../master/src/main/java/org/mo39/fmbh/uncategorized/.keep)
     

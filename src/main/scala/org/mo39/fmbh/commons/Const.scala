@@ -21,9 +21,10 @@ object Const {
     Paths.get(ScalaPackageRoot.toString, "uncategorized"),
     Paths.get(JavaPackageRoot.toString, "uncategorized")
   ).grouped(2).toList
-  val AlgorithmProblems: List[Problem]     = ProblemDirs(0).flatMap(toProblemArr)
-  val DatastructureProblems: List[Problem] = ProblemDirs(1).flatMap(toProblemArr)
-  val UncategorizedProblems: List[Problem] = ProblemDirs(2).flatMap(toProblemArr)
+  val AlgorithmProblems
+    : List[Problem]                        = ProblemDirs(0).flatMap(toProblemArr).filter(_.name != "") // Remove .keep file, whose name is empty after remove the extension
+  val DatastructureProblems: List[Problem] = ProblemDirs(1).flatMap(toProblemArr).filter(_.name != "")
+  val UncategorizedProblems: List[Problem] = ProblemDirs(2).flatMap(toProblemArr).filter(_.name != "")
   val Problems: List[Problem] = List(
     AlgorithmProblems,
     DatastructureProblems,
