@@ -18,10 +18,13 @@
   - [MergeTwoBinaryTrees](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/MergeTwoBinaryTrees.scala)
   - [MinimumAbsoluteDifferenceInBst](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/MinimumAbsoluteDifferenceInBst.scala)
   - [MinimumDistanceBetweenBstNodes](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/MinimumDistanceBetweenBstNodes.scala)
+  - [PathSumIII](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/PathSumIII.scala)
   - [SameTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SameTree.scala)
   - [SecondMinimumNodeInABinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SecondMinimumNodeInABinaryTree.scala)
   - [SerializeAndDeserializeBinaryTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SerializeAndDeserializeBinaryTree.scala)
+  - [SubtreeOfAnotherTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SubtreeOfAnotherTree.scala)
   - [SumOfLeftLeaves](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SumOfLeftLeaves.scala)
+  - [SymmetricTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SymmetricTree.scala)
   - [TrimABinarySearchTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/TrimABinarySearchTree.scala)
   - [TwoSumIvInputIsABst](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/TwoSumIvInputIsABst.scala)
 ###### design
@@ -42,6 +45,7 @@
   - [LongestUncommonSubsequenceI](../master/src/main/scala/org/mo39/fmbh/datastructure/string/LongestUncommonSubsequenceI.scala)
   - [ReverseString](../master/src/main/scala/org/mo39/fmbh/datastructure/string/ReverseString.scala)
   - [ReverseStringII](../master/src/main/scala/org/mo39/fmbh/datastructure/string/ReverseStringII.scala)
+  - [StrobogrammaticNumber](../master/src/main/scala/org/mo39/fmbh/datastructure/string/StrobogrammaticNumber.scala)
 ###### array
   - [ArrayPartitionI](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ArrayPartitionI.scala)
   - [ContainsDuplicate](../master/src/main/scala/org/mo39/fmbh/datastructure/array/ContainsDuplicate.scala)
@@ -115,6 +119,9 @@
   - [LongestContinuousIncreasingSubsequence](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/LongestContinuousIncreasingSubsequence.scala)
   - [RemoveElement](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/RemoveElement.scala)
   - [TwoSumIiInputArrayIsSorted](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/TwoSumIiInputArrayIsSorted.scala)
+###### dichotomy
+  - [SearchInsertPosition](../master/src/main/scala/org/mo39/fmbh/algorithm/dichotomy/SearchInsertPosition.scala)
+  - [ValidPerfectSquare](../master/src/main/scala/org/mo39/fmbh/algorithm/dichotomy/ValidPerfectSquare.scala)
 ###### permutation
   - [LetterCasePermutation](../master/src/main/scala/org/mo39/fmbh/algorithm/permutation/LetterCasePermutation.scala)
   - [NumberOfBoomerangs](../master/src/main/scala/org/mo39/fmbh/algorithm/permutation/NumberOfBoomerangs.scala)
@@ -132,6 +139,7 @@
   - [LargestTriangleArea](../master/src/main/scala/org/mo39/fmbh/algorithm/bruteforce/LargestTriangleArea.scala)
 ###### math
   - [MinimumMovesToEqualArrayElements](../master/src/main/scala/org/mo39/fmbh/algorithm/math/MinimumMovesToEqualArrayElements.scala)
+  - [PascalsTriangleII](../master/src/main/scala/org/mo39/fmbh/algorithm/math/PascalsTriangleII.scala)
 ###### algorithm
   - [](../master/src/main/java/org/mo39/fmbh/algorithm/.keep)
 ###### greedy
