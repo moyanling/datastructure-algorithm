@@ -49,7 +49,8 @@ sealed trait SearchInsertPosition {
 }
 
 object SearchInsertPosition extends Enumerable[SearchInsertPosition] {
-  case object Solution extends SearchInsertPosition {
+
+  case object Solution0 extends SearchInsertPosition {
     override def searchInsert(nums: Array[Int], target: Int): Int = {
       var (i, j) = (0, nums.length - 1)
       while (i < j) {
@@ -61,4 +62,22 @@ object SearchInsertPosition extends Enumerable[SearchInsertPosition] {
       if (nums(i) < target) i + 1 else i // Pointer i cannot go beyond index so this has to be done manually.
     }
   }
+
+  /**
+    * This solution is conceptually better.
+    * mid is never touched by i and j.
+    */
+  case object Solution1 extends SearchInsertPosition {
+    override def searchInsert(nums: Array[Int], target: Int): Int = {
+      var (i, j) = (0, nums.length)
+      while (i < j) {
+        val mid = (i + j) / 2
+        if (nums(mid) == target) return mid
+        else if (nums(mid) > target) j = mid
+        else i = mid + 1
+      }
+      i
+    }
+  }
+
 }
