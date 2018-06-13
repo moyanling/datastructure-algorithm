@@ -53,13 +53,21 @@ object RepeatedSubstringPattern extends Enumerable[RepeatedSubstringPattern] {
     * Concise but not fast enough
     */
   case object Solution0 extends RepeatedSubstringPattern {
-    override def repeatedSubstringPattern(s: String): Boolean = {
+    override def repeatedSubstringPattern(s: String): Boolean =
       (1 to s.length / 2).exists(i => s.length % i == 0 && s.take(i) * (s.length / i) == s)
-    }
   }
 
   case object Solution1 extends RepeatedSubstringPattern {
-    override def repeatedSubstringPattern(s: String): Boolean = ???
+    override def repeatedSubstringPattern(s: String): Boolean =
+      (1 to s.length / 2).filter(s.length % _ == 0).exists { len =>
+        (0 until len).map(_ until s.length by len).forall(r => r.map(s).distinct.size == 1)
+      }
+
+  }
+
+  case object Solution2 extends RepeatedSubstringPattern {
+    override def repeatedSubstringPattern(s: String): Boolean = (s + s).substring(1, s.length * 2 - 1).indexOf(s) != -1
+
   }
 
 }

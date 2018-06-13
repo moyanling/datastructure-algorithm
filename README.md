@@ -27,6 +27,7 @@
   - [SymmetricTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/SymmetricTree.scala)
   - [TrimABinarySearchTree](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/TrimABinarySearchTree.scala)
   - [TwoSumIvInputIsABst](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/TwoSumIvInputIsABst.scala)
+  - [LowestCommonAncestorOfABinarySearchTree](../master/src/main/java/org/mo39/fmbh/datastructure/binarytree/LowestCommonAncestorOfABinarySearchTree.java)
 ###### design
   - [LoggerRateLimiter](../master/src/main/scala/org/mo39/fmbh/datastructure/design/LoggerRateLimiter.scala)
   - [MovingAverageFromDataStream](../master/src/main/scala/org/mo39/fmbh/datastructure/design/MovingAverageFromDataStream.scala)
@@ -161,5 +162,6 @@
   - [NumberOfLinesToWriteString](../master/src/main/scala/org/mo39/fmbh/uncategorized/NumberOfLinesToWriteString.scala)
   - [OneBitAndTwoBitCharacters](../master/src/main/scala/org/mo39/fmbh/uncategorized/OneBitAndTwoBitCharacters.scala)
   - [PlusOne](../master/src/main/scala/org/mo39/fmbh/uncategorized/PlusOne.scala)
+  - [RepeatedSubstringPattern](../master/src/main/scala/org/mo39/fmbh/uncategorized/RepeatedSubstringPattern.scala)
   - [SelfDividingNumbers](../master/src/main/scala/org/mo39/fmbh/uncategorized/SelfDividingNumbers.scala)
     
