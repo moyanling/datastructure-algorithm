@@ -13,7 +13,7 @@ import org.mo39.fmbh.commons.utils.Z._
   */
 abstract class MoTestSuite[T] extends FunSuite {
 
-  def g(testName: String = "")(testCase: T => Any): Unit = {
+  def g(testName: Any = "")(testCase: T => Any): Unit = {
     /* Get the companion object of the trait T using some naming convention trick */
     val obj = getClass.getName.stripSuffix("Test").toObject[T]
     require(obj.isSuccess, getClass.getName.stripSuffix("Test"))
@@ -22,7 +22,7 @@ abstract class MoTestSuite[T] extends FunSuite {
     /* Test each solution */
     solutions.foreach(solution => {
       var name = solution.toString
-      if (testName != "") name = s"${solution.toString}: $testName"
+      if (testName.toString != "") name = s"${solution.toString}: $testName"
       try {
         testCase(solution)
         super.test(name)( /* Pass */ )
