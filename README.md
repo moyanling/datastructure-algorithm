@@ -30,6 +30,7 @@
   - [TwoSumIvInputIsABst](../master/src/main/scala/org/mo39/fmbh/datastructure/binarytree/TwoSumIvInputIsABst.scala)
   - [LowestCommonAncestorOfABinarySearchTree](../master/src/main/java/org/mo39/fmbh/datastructure/binarytree/LowestCommonAncestorOfABinarySearchTree.java)
 ###### design
+  - [ImplementQueueUsingStacks](../master/src/main/scala/org/mo39/fmbh/datastructure/design/ImplementQueueUsingStacks.scala)
   - [LoggerRateLimiter](../master/src/main/scala/org/mo39/fmbh/datastructure/design/LoggerRateLimiter.scala)
   - [MinStack](../master/src/main/scala/org/mo39/fmbh/datastructure/design/MinStack.scala)
   - [MovingAverageFromDataStream](../master/src/main/scala/org/mo39/fmbh/datastructure/design/MovingAverageFromDataStream.scala)
@@ -38,6 +39,8 @@
   - [MovingAverageFromDataStream](../master/src/main/scala/org/mo39/fmbh/datastructure/queue/MovingAverageFromDataStream.scala)
 ###### string
   - [AddStrings](../master/src/main/scala/org/mo39/fmbh/datastructure/string/AddStrings.scala)
+  - [BoldWordsInString](../master/src/main/scala/org/mo39/fmbh/datastructure/string/BoldWordsInString.scala)
+  - [CountAndSay](../master/src/main/scala/org/mo39/fmbh/datastructure/string/CountAndSay.scala)
   - [CountBinarySubstrings](../master/src/main/scala/org/mo39/fmbh/datastructure/string/CountBinarySubstrings.scala)
   - [DetectCapital](../master/src/main/scala/org/mo39/fmbh/datastructure/string/DetectCapital.scala)
   - [FizzBuzz](../master/src/main/scala/org/mo39/fmbh/datastructure/string/FizzBuzz.scala)
@@ -47,6 +50,7 @@
   - [LicenseKeyFormatting](../master/src/main/scala/org/mo39/fmbh/datastructure/string/LicenseKeyFormatting.scala)
   - [LongestPalindrome](../master/src/main/scala/org/mo39/fmbh/datastructure/string/LongestPalindrome.scala)
   - [LongestUncommonSubsequenceI](../master/src/main/scala/org/mo39/fmbh/datastructure/string/LongestUncommonSubsequenceI.scala)
+  - [NumberOfSegmentsInAString](../master/src/main/scala/org/mo39/fmbh/datastructure/string/NumberOfSegmentsInAString.scala)
   - [ReverseString](../master/src/main/scala/org/mo39/fmbh/datastructure/string/ReverseString.scala)
   - [ReverseStringII](../master/src/main/scala/org/mo39/fmbh/datastructure/string/ReverseStringII.scala)
   - [StrobogrammaticNumber](../master/src/main/scala/org/mo39/fmbh/datastructure/string/StrobogrammaticNumber.scala)
@@ -74,6 +78,7 @@
   - [NestedListWeightSum](../master/src/main/scala/org/mo39/fmbh/datastructure/array/NestedListWeightSum.scala)
   - [NextGreaterElementI](../master/src/main/scala/org/mo39/fmbh/datastructure/array/NextGreaterElementI.scala)
   - [NextPermutation](../master/src/main/scala/org/mo39/fmbh/datastructure/array/NextPermutation.scala)
+  - [PeakIndexInAMountainArray](../master/src/main/scala/org/mo39/fmbh/datastructure/array/PeakIndexInAMountainArray.scala)
   - [PositionsOfLargeGroups](../master/src/main/scala/org/mo39/fmbh/datastructure/array/PositionsOfLargeGroups.scala)
   - [RangeAdditionII](../master/src/main/scala/org/mo39/fmbh/datastructure/array/RangeAdditionII.scala)
   - [RelativeRanks](../master/src/main/scala/org/mo39/fmbh/datastructure/array/RelativeRanks.scala)
@@ -114,10 +119,14 @@
   - [ReverseLinkedList](../master/src/main/scala/org/mo39/fmbh/datastructure/linkedlist/ReverseLinkedList.scala)
   - [DeleteNodeInALinkedList](../master/src/main/java/org/mo39/fmbh/datastructure/linkedlist/DeleteNodeInALinkedList.java)
 ###### stack
+  - [BackspaceStringCompare](../master/src/main/scala/org/mo39/fmbh/datastructure/stack/BackspaceStringCompare.scala)
   - [BaseballGame](../master/src/main/scala/org/mo39/fmbh/datastructure/stack/BaseballGame.scala)
   - [BestTimeToBuyAndSellStockII](../master/src/main/scala/org/mo39/fmbh/datastructure/stack/BestTimeToBuyAndSellStockII.scala)
   - [DailyTemperatures](../master/src/main/scala/org/mo39/fmbh/datastructure/stack/DailyTemperatures.scala)
   - [ValidParentheses](../master/src/main/scala/org/mo39/fmbh/datastructure/stack/ValidParentheses.scala)
+###### array2d
+  - [MaximumDistanceInArrays](../master/src/main/scala/org/mo39/fmbh/datastructure/array2d/MaximumDistanceInArrays.scala)
+  - [ValidWordSquare](../master/src/main/scala/org/mo39/fmbh/datastructure/array2d/ValidWordSquare.scala)
 ### Algorithm
 ###### dynamicprogramming
   - [BestTimeToBuyAndSellStock](../master/src/main/scala/org/mo39/fmbh/algorithm/dynamicprogramming/BestTimeToBuyAndSellStock.scala)
@@ -133,6 +142,7 @@
   - [MaximizeDistanceToClosestPerson](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/MaximizeDistanceToClosestPerson.scala)
   - [RemoveElement](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/RemoveElement.scala)
   - [ReverseVowelsOfAString](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/ReverseVowelsOfAString.scala)
+  - [StringCompression](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/StringCompression.scala)
   - [TrappingRainWater](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/TrappingRainWater.scala)
   - [TwoSumIiInputArrayIsSorted](../master/src/main/scala/org/mo39/fmbh/algorithm/twopointers/TwoSumIiInputArrayIsSorted.scala)
 ###### dichotomy
@@ -160,6 +170,7 @@
 ###### bruteforce
   - [LargestTriangleArea](../master/src/main/scala/org/mo39/fmbh/algorithm/bruteforce/LargestTriangleArea.scala)
 ###### math
+  - [FactorialTrailingZeroes](../master/src/main/scala/org/mo39/fmbh/algorithm/math/FactorialTrailingZeroes.scala)
   - [MinimumMovesToEqualArrayElements](../master/src/main/scala/org/mo39/fmbh/algorithm/math/MinimumMovesToEqualArrayElements.scala)
   - [PascalsTriangleII](../master/src/main/scala/org/mo39/fmbh/algorithm/math/PascalsTriangleII.scala)
 ###### greedy
@@ -184,6 +195,7 @@
 ###### slidingwindow
   - [SlidingWindowMaximum](../master/src/main/scala/org/mo39/fmbh/algorithm/slidingwindow/SlidingWindowMaximum.scala)
 ### Uncategorized
+  - [ArrangingCoins](../master/src/main/scala/org/mo39/fmbh/uncategorized/ArrangingCoins.scala)
   - [ConstructTheRectangle](../master/src/main/scala/org/mo39/fmbh/uncategorized/ConstructTheRectangle.scala)
   - [ExcelSheetColumnNumber](../master/src/main/scala/org/mo39/fmbh/uncategorized/ExcelSheetColumnNumber.scala)
   - [NumberOfLinesToWriteString](../master/src/main/scala/org/mo39/fmbh/uncategorized/NumberOfLinesToWriteString.scala)

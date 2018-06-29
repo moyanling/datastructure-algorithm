@@ -2,7 +2,7 @@ name := "datastructure-algorithm"
 
 version := "0.1"
 
-scalaVersion := "2.12.3"
+scalaVersion := "2.13"
 
 libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
 libraryDependencies += "org.scalactic"              %% "scalactic"      % "3.0.5"
